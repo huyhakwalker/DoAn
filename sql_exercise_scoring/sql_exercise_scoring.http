@@ -1,0 +1,6 @@
+@sql_exercise_scoring_HostAddress = http://localhost:5004
+
+GET {{sql_exercise_scoring_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
