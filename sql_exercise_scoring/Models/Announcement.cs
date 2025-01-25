@@ -1,14 +1,17 @@
-﻿using sql_exercise_scoring.Models;
+﻿using System;
+using System.Collections.Generic;
 
-namespace sql_exercise_scoring.Models
+namespace sql_exercise_scoring.Models;
+
+public partial class Announcement
 {
-    public class Announcement
-    {
-        public int AnnouncementId { get; set; }
-        public int ContestId { get; set; }
-        public DateTime AnnounceTime { get; set; }
-        public string AnnounceContent { get; set; } = string.Empty;
+    public int AnnouncementId { get; set; }
 
-        public Contest Contest { get; set; }
-    }
+    public int ContestId { get; set; }
+
+    public DateTime AnnounceTime { get; set; }
+
+    public string AnnounceContent { get; set; } = null!;
+
+    public virtual Contest Contest { get; set; } = null!;
 }

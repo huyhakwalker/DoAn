@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\Learning\\DoAn\\sql_exercise_scoring\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|d:\\learning\\doan\\sql_exercise_scoring\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3364278F-1775-41B1-B904-BD13656D8E87}|sql_exercise_scoring.csproj|d:\\learning\\doan\\sql_exercise_scoring\\areas\\admin\\views\\codersadmin\\detailorupdate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3364278F-1775-41B1-B904-BD13656D8E87}|sql_exercise_scoring.csproj|solutionrelative:areas\\admin\\views\\codersadmin\\detailorupdate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|d:\\learning\\doan\\sql_exercise_scoring\\services\\icoderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|solutionrelative:services\\icoderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|d:\\learning\\doan\\sql_exercise_scoring\\repositories\\icoderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|solutionrelative:repositories\\icoderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|d:\\learning\\doan\\sql_exercise_scoring\\services\\coderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|solutionrelative:services\\coderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|d:\\learning\\doan\\sql_exercise_scoring\\controllers\\coderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{344273DB-099E-4C45-9F20-A2347A646779}|sql_exercise_scoring.csproj|solutionrelative:controllers\\coderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3364278F-1775-41B1-B904-BD13656D8E87}|sql_exercise_scoring.csproj|d:\\learning\\doan\\sql_exercise_scoring\\areas\\admin\\controllers\\codersadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3364278F-1775-41B1-B904-BD13656D8E87}|sql_exercise_scoring.csproj|solutionrelative:areas\\admin\\controllers\\codersadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,67 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ICoderService.cs",
-              "DocumentMoniker": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Services\\ICoderService.cs",
-              "RelativeDocumentMoniker": "Services\\ICoderService.cs",
-              "ToolTip": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Services\\ICoderService.cs",
-              "RelativeToolTip": "Services\\ICoderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:14:39.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ICoderRepository.cs",
-              "DocumentMoniker": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Repositories\\ICoderRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ICoderRepository.cs",
-              "ToolTip": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Repositories\\ICoderRepository.cs",
-              "RelativeToolTip": "Repositories\\ICoderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:14:24.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:13:56.072Z",
+              "Title": "DetailOrUpdate.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Areas\\Admin\\Views\\CodersAdmin\\DetailOrUpdate.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\CodersAdmin\\DetailOrUpdate.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Areas\\Admin\\Views\\CodersAdmin\\DetailOrUpdate.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\CodersAdmin\\DetailOrUpdate.cshtml",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAgwF8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-25T08:40:37.54Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CoderService.cs",
-              "DocumentMoniker": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Services\\CoderService.cs",
-              "RelativeDocumentMoniker": "Services\\CoderService.cs",
-              "ToolTip": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Services\\CoderService.cs",
-              "RelativeToolTip": "Services\\CoderService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAYwF8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CodersAdminController.cs",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Areas\\Admin\\Controllers\\CodersAdminController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\CodersAdminController.cs",
+              "ToolTip": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Areas\\Admin\\Controllers\\CodersAdminController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\CodersAdminController.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAgwHQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:09:21.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CodersController.cs",
-              "DocumentMoniker": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Controllers\\CodersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CodersController.cs",
-              "ToolTip": "D:\\Learning\\DoAn\\sql_exercise_scoring\\Controllers\\CodersController.cs",
-              "RelativeToolTip": "Controllers\\CodersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:09:00.835Z",
+              "WhenOpened": "2025-01-25T08:39:58.636Z",
               "EditorCaption": ""
             }
           ]

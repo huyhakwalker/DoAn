@@ -1,15 +1,23 @@
-﻿namespace sql_exercise_scoring.Models
-{
-    public class TestCase
-    {
-        public int TestCaseId { get; set; }
-        public int ProblemId { get; set; }
-        public string SampleTest { get; set; } = string.Empty;
-        public string? PreTest { get; set; }
-        public string ExpectedResult { get; set; } = string.Empty;
-        public string CheckerLogic { get; set; } = string.Empty;
+﻿using System;
+using System.Collections.Generic;
 
-        public Problem Problem { get; set; }
-        public ICollection<TestRun> TestRuns { get; set; }
-    }
+namespace sql_exercise_scoring.Models;
+
+public partial class TestCase
+{
+    public int TestCaseId { get; set; }
+
+    public int ProblemId { get; set; }
+
+    public string SampleTest { get; set; } = null!;
+
+    public string? PreTest { get; set; }
+
+    public string ExpectedResult { get; set; } = null!;
+
+    public string CheckerLogic { get; set; } = null!;
+
+    public virtual Problem Problem { get; set; } = null!;
+
+    public virtual ICollection<TestRun> TestRuns { get; set; } = new List<TestRun>();
 }

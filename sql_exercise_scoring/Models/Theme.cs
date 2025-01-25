@@ -1,11 +1,15 @@
-﻿namespace sql_exercise_scoring.Models
-{
-    public class Theme
-    {
-        public int ThemeId { get; set; }
-        public string ThemeName { get; set; } = string.Empty;
-        public int ThemeOrder { get; set; }
+﻿using System;
+using System.Collections.Generic;
 
-        public ICollection<ProblemTheme> ProblemThemes { get; set; }
-    }
+namespace sql_exercise_scoring.Models;
+
+public partial class Theme
+{
+    public int ThemeId { get; set; }
+
+    public string ThemeName { get; set; } = null!;
+
+    public int ThemeOrder { get; set; }
+
+    public virtual ICollection<ProblemTheme> ProblemThemes { get; set; } = new List<ProblemTheme>();
 }

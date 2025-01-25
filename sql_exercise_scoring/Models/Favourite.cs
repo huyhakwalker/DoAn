@@ -1,12 +1,17 @@
-﻿namespace sql_exercise_scoring.Models
-{
-    public class Favourite
-    {
-        public int CoderId { get; set; }
-        public int ProblemId { get; set; }
-        public string? Note { get; set; }
+﻿using System;
+using System.Collections.Generic;
 
-        public Coder Coder { get; set; }
-        public Problem Problem { get; set; }
-    }
+namespace sql_exercise_scoring.Models;
+
+public partial class Favourite
+{
+    public int CoderId { get; set; }
+
+    public int ProblemId { get; set; }
+
+    public string? Note { get; set; }
+
+    public virtual Coder Coder { get; set; } = null!;
+
+    public virtual Problem Problem { get; set; } = null!;
 }

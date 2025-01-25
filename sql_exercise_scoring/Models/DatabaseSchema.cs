@@ -1,12 +1,17 @@
-﻿namespace sql_exercise_scoring.Models
-{
-    public class DatabaseSchema
-    {
-        public int DatabaseSchemaId { get; set; }
-        public int ProblemId { get; set; }
-        public string SchemaDefinition { get; set; } = string.Empty;
-        public string InitialData { get; set; } = string.Empty;
+﻿using System;
+using System.Collections.Generic;
 
-        public Problem Problem { get; set; }
-    }
+namespace sql_exercise_scoring.Models;
+
+public partial class DatabaseSchema
+{
+    public int DatabaseSchemaId { get; set; }
+
+    public int ProblemId { get; set; }
+
+    public string SchemaDefinition { get; set; } = null!;
+
+    public string InitialData { get; set; } = null!;
+
+    public virtual Problem Problem { get; set; } = null!;
 }
