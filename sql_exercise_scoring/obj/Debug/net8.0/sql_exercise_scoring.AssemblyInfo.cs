@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sql_exercise_scoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32c648c27cc3b2d93bbc330cd9581192a62bad4c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e78b7225f51eedb1998e5af917462269d6695261")]
 [assembly: System.Reflection.AssemblyProductAttribute("sql_exercise_scoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sql_exercise_scoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,121 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model sql_exercise_scoring.Models.Coder
+
+@{
+    ViewData["Title"] = "Tạo mới tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container py-0">
+</div>
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            <form action="@Url.Action("Create", "CodersAdmin", new { area = "Admin" })" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="form-group mb-3">
+                    <label for="CoderName" class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" id="CoderName" name="CoderName" placeholder="Nhập họ và tên" />
+                    <span class="text-danger">@Html.ValidationMessage("CoderName")</span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="CoderEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="CoderEmail" name="CoderEmail" placeholder="Nhập địa chỉ email" />
+                    <span class="text-danger">@Html.ValidationMessage("CoderEmail")</span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Password" class="form-label">Mật khẩu</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="Password" name="Password" 
+                               placeholder="Nhập mật khẩu" required />
+                        <button type="button" class="btn btn-outline-secondary" 
+                                onclick="togglePasswordVisibility('Password')">
+                            <i id="Password-icon" class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="text-danger">@Html.ValidationMessage("Password")</span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Gender" class="form-label">Giới tính</label>
+                    <select class="form-control" id="Gender" name="Gender">
+                        <option value="">-- Chọn giới tính --</option>
+                        <option value="true">Nam</option>
+                        <option value="false">Nữ</option>
+                    </select>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="AdminCoder" class="form-label">Quyền Admin</label>
+                            <select class="form-control" id="AdminCoder" name="AdminCoder">
+                                <option value="true">Có</option>
+                                <option value="false">Không</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ContestSetter" class="form-label">Quyền tạo Contest</label>
+                            <select class="form-control" id="ContestSetter" name="ContestSetter">
+                                <option value="true">Có</option>
+                                <option value="false">Không</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ReceiveEmail" class="form-label">Nhận email thông báo</label>
+                            <select class="form-control" id="ReceiveEmail" name="ReceiveEmail">
+                                <option value="true">Có</option>
+                                <option value="false">Không</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <p class="fst-italic">
+                        <strong>*</strong>
+                        Vui lòng điền đầy đủ thông tin để tạo tài khoản mới.
+                    </p>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-success px-4">
+                        <i class="fas fa-save"></i> Tạo tài khoản
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        function togglePasswordVisibility(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const icon = document.getElementById(fieldId + '-icon');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+}
