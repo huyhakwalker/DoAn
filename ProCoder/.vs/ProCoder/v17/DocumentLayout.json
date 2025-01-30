@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Learning\\DoAn\\ProCoder\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\views\\blogs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:views\\blogs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\views\\blogs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:views\\blogs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAADwv7IAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T16:51:09.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Views\\Home\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Register.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Views\\Home\\Register.cshtml",
+              "RelativeToolTip": "Views\\Home\\Register.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-30T16:51:02.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "jquery.validate.js",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+              "RelativeToolTip": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-30T16:24:59.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Views\\Blogs\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Blogs\\Edit.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Views\\Blogs\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Blogs\\Edit.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-30T16:22:13.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Views\\Blogs\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Blogs\\Details.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Views\\Blogs\\Details.cshtml",
+              "RelativeToolTip": "Views\\Blogs\\Details.cshtml",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-30T16:22:06.481Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
