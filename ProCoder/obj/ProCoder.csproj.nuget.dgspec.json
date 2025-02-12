@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learning\\DoAn\\ProCoder\\ProCoder.csproj": {}
+    "D:\\Learning\\DoAnNew\\DoAn\\ProCoder\\ProCoder.csproj": {}
   },
   "projects": {
-    "D:\\Learning\\DoAn\\ProCoder\\ProCoder.csproj": {
+    "D:\\Learning\\DoAnNew\\DoAn\\ProCoder\\ProCoder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learning\\DoAn\\ProCoder\\ProCoder.csproj",
+        "projectUniqueName": "D:\\Learning\\DoAnNew\\DoAn\\ProCoder\\ProCoder.csproj",
         "projectName": "ProCoder",
-        "projectPath": "D:\\Learning\\DoAn\\ProCoder\\ProCoder.csproj",
+        "projectPath": "D:\\Learning\\DoAnNew\\DoAn\\ProCoder\\ProCoder.csproj",
         "packagesPath": "C:\\Users\\Chaizo\\.nuget\\packages\\",
-        "outputPath": "D:\\Learning\\DoAn\\ProCoder\\obj\\",
+        "outputPath": "D:\\Learning\\DoAnNew\\DoAn\\ProCoder\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
