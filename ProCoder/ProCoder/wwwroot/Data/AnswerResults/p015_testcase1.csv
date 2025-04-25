@@ -1,0 +1,5 @@
+DepartmentName,Floor,HeadDoctor,TotalPatients,CurrentPatients,AvgStayDays
+Cardiology,2,Dr. John Smith,2,1,4
+Neurology,3,Dr. Sarah Johnson,2,1,7
+Orthopedics,4,Dr. Emily Davis,2,1,5
+Pediatrics,1,Dr. Michael Brown,2,1,4 

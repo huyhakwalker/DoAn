@@ -1,0 +1,17 @@
+-- Thêm dữ liệu vào bảng Departments
+INSERT INTO Departments (DepartmentID, DepartmentName, Floor, HeadDoctor) VALUES
+(1, 'Cardiology', 2, 'Dr. John Smith'),
+(2, 'Neurology', 3, 'Dr. Sarah Johnson'),
+(3, 'Pediatrics', 1, 'Dr. Michael Brown'),
+(4, 'Orthopedics', 4, 'Dr. Emily Davis');
+
+-- Thêm dữ liệu vào bảng Patients
+INSERT INTO Patients (PatientID, FirstName, LastName, DepartmentID, AdmissionDate, DischargeDate, Diagnosis, RoomNumber) VALUES
+(1, 'Robert', 'Wilson', 1, '2024-01-15', '2024-01-20', 'Hypertension', '201'),
+(2, 'Mary', 'Anderson', 1, '2024-01-16', NULL, 'Heart Arrhythmia', '202'),
+(3, 'James', 'Taylor', 2, '2024-01-14', '2024-01-22', 'Migraine', '301'),
+(4, 'Patricia', 'Martinez', 2, '2024-01-17', NULL, 'Epilepsy', '302'),
+(5, 'William', 'Thomas', 3, '2024-01-13', '2024-01-18', 'Pneumonia', '101'),
+(6, 'Elizabeth', 'Garcia', 3, '2024-01-16', NULL, 'Asthma', '102'),
+(7, 'David', 'Lee', 4, '2024-01-15', '2024-01-21', 'Fractured Hip', '401'),
+(8, 'Jennifer', 'White', 4, '2024-01-18', NULL, 'Knee Injury', '402'); 

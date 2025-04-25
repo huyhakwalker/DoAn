@@ -1,0 +1,11 @@
+INSERT INTO Categories (CategoryID, CategoryName)
+VALUES 
+    (1, 'Clothing'),
+    (2, 'Food');
+
+INSERT INTO Products (ProductID, ProductName, CategoryID, Price)
+VALUES 
+    (1, 'T-shirt', 1, 25),
+    (2, 'Jeans', 1, 45),
+    (3, 'Pizza', 2, 15),
+    (4, 'Salad', 2, 10); 

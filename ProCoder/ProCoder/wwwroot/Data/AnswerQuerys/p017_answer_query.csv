@@ -1,0 +1,11 @@
+SELECT 
+    m.Genre,
+    COUNT(DISTINCT m.MovieID) as NumberOfMovies,
+    COUNT(s.ScreeningID) as NumberOfScreenings,
+    SUM(s.Price * (200 - s.AvailableSeats)) as TotalRevenue,
+    FORMAT(AVG(m.Rating), 'N1') as AverageRating,
+    STRING_AGG(m.Title, ', ') as Movies
+FROM Movies m
+LEFT JOIN Screenings s ON m.MovieID = s.MovieID
+GROUP BY m.Genre
+ORDER BY TotalRevenue DESC; 

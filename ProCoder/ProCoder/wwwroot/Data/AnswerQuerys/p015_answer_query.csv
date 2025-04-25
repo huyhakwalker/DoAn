@@ -1,0 +1,11 @@
+SELECT 
+    d.DepartmentName,
+    d.Floor,
+    d.HeadDoctor,
+    COUNT(p.PatientID) as TotalPatients,
+    SUM(CASE WHEN p.DischargeDate IS NULL THEN 1 ELSE 0 END) as CurrentPatients,
+    AVG(DATEDIFF(day, p.AdmissionDate, ISNULL(p.DischargeDate, GETDATE()))) as AvgStayDays
+FROM Departments d
+LEFT JOIN Patients p ON d.DepartmentID = p.DepartmentID
+GROUP BY d.DepartmentName, d.Floor, d.HeadDoctor
+ORDER BY CurrentPatients DESC, TotalPatients DESC; 

@@ -1,0 +1,116 @@
+@model IEnumerable<ProCoder.Models.SchemaData>
+@{
+    ViewData["Title"] = "Dữ liệu mẫu cho " + ViewBag.Schema.SchemaName;
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Dữ liệu mẫu - @ViewBag.Schema.SchemaName</h6>
+            <div>
+                <a href="@Url.Action("CreateSchemaData", "DatabaseSchemasAdmin", new { area = "Admin", schemaId = ViewBag.Schema.DatabaseSchemaId })" class="btn btn-success">
+                    <i class="fas fa-plus"></i> Thêm dữ liệu mẫu
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên dữ liệu</th>
+                                <th>Mô tả</th>
+                                <th>Ngày tạo</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 1;
+                                foreach (var data in Model)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>@data.DataName</td>
+                                        <td>@data.Description</td>
+                                        <td>@data.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="@Url.Action("SchemaDataDetails", "DatabaseSchemasAdmin", new { area = "Admin", schemaId = ViewBag.Schema.DatabaseSchemaId, dataId = data.SchemaDataId })" class="btn btn-info btn-sm me-1">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="@Url.Action("EditSchemaData", "DatabaseSchemasAdmin", new { area = "Admin", schemaId = ViewBag.Schema.DatabaseSchemaId, dataId = data.SchemaDataId })" class="btn btn-warning btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(@ViewBag.Schema.DatabaseSchemaId, @data.SchemaDataId)">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info">
+                    Chưa có dữ liệu mẫu nào cho schema này.
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Xác nhận xóa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn xóa dữ liệu mẫu này không?
+            </div>
+            <div class="modal-footer">
+                <form id="deleteForm" action="" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-danger">Xóa</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(schemaId, dataId) {
+            $('#deleteForm').attr('action', `/Admin/DatabaseSchemasAdmin/${schemaId}/SchemaData/Delete/${dataId}`);
+            $('#deleteModal').modal('show');
+        }
+    </script>
+} 

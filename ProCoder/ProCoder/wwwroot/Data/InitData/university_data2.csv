@@ -1,0 +1,20 @@
+-- Thêm dữ liệu vào bảng Departments
+INSERT INTO Departments (DepartmentID, DepartmentName, Location, HeadProfessor) VALUES
+(1, N'Khoa Cơ khí', N'Tòa nhà E', N'GS. Hoàng Văn E'),
+(2, N'Khoa Xây dựng', N'Tòa nhà F', N'GS. Đặng Thị F'),
+(3, N'Khoa Y', N'Tòa nhà G', N'GS. Bùi Văn G'),
+(4, N'Khoa Luật', N'Tòa nhà H', N'GS. Mai Thị H'),
+(5, N'Khoa Môi trường', N'Tòa nhà I', N'GS. Dương Văn I');
+
+-- Thêm dữ liệu vào bảng Students
+INSERT INTO Students (StudentID, FirstName, LastName, DepartmentID, EnrollmentDate, DateOfBirth, GPA) VALUES
+(1, N'Bùi', N'Văn Long', 1, '2020-09-01', '2002-02-14', 3.85),
+(2, N'Mai', N'Thị Hương', 1, '2020-09-01', '2002-05-22', 3.95),
+(3, N'Dương', N'Văn Thành', 2, '2020-09-01', '2002-08-17', 3.70),
+(4, N'Lý', N'Thị Nga', 2, '2020-09-01', '2002-11-30', 3.60),
+(5, N'Đặng', N'Văn Phú', 3, '2020-09-01', '2002-03-25', 3.90),
+(6, N'Hồ', N'Thị Trang', 3, '2020-09-01', '2002-07-08', 3.80),
+(7, N'Phan', N'Văn Quang', 4, '2020-09-01', '2002-09-19', 3.75),
+(8, N'Trương', N'Thị Xuân', 4, '2020-09-01', '2002-12-03', 3.65),
+(9, N'Huỳnh', N'Văn Sơn', 5, '2020-09-01', '2002-04-16', 3.55),
+(10, N'Võ', N'Thị Yến', 5, '2020-09-01', '2002-10-28', 3.45); 

@@ -1,0 +1,1193 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProCoder.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ProCoder.qid5hwydbx.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\css\\Admin.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\Admin.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\css\\notifier_massage.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\notifier_massage.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\css\\printReport.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\printReport.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\css\\site.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\favicon.ico",
+      "PackagePath": "staticwebassets\\Admin\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\image\\bg\\bg.jpg",
+      "PackagePath": "staticwebassets\\Admin\\image\\bg\\bg.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\image\\logo\\admin-logo.png",
+      "PackagePath": "staticwebassets\\Admin\\image\\logo\\admin-logo.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\image\\logo\\avatar-default.png",
+      "PackagePath": "staticwebassets\\Admin\\image\\logo\\avatar-default.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\image\\logo\\logo-ntu.png",
+      "PackagePath": "staticwebassets\\Admin\\image\\logo\\logo-ntu.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\image\\notification.png",
+      "PackagePath": "staticwebassets\\Admin\\image\\notification.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\image\\sweetsoft-logo.png",
+      "PackagePath": "staticwebassets\\Admin\\image\\sweetsoft-logo.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\image\\user_default_avar.png",
+      "PackagePath": "staticwebassets\\Admin\\image\\user_default_avar.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\012fc630-71a4-4503-bc06-6848a3c1f9e4.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\012fc630-71a4-4503-bc06-6848a3c1f9e4.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\1f442e6c-8b28-41c5-882d-54c5b3289d9c.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\1f442e6c-8b28-41c5-882d-54c5b3289d9c.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\213df933-1bf1-479a-bd71-9a0ceb21395f.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\213df933-1bf1-479a-bd71-9a0ceb21395f.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\2f18ed08-9414-4f8a-b29b-d555f78c928d.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\2f18ed08-9414-4f8a-b29b-d555f78c928d.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\433a26c7-ca46-4863-869c-51a2901a3d56.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\433a26c7-ca46-4863-869c-51a2901a3d56.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\65765e4e-3f5a-4fd6-a2b7-5b0cf59f7ede.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\65765e4e-3f5a-4fd6-a2b7-5b0cf59f7ede.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\6c9aecae-96d1-40a1-ae71-dad87fe12a2e.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\6c9aecae-96d1-40a1-ae71-dad87fe12a2e.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\7a566a19-6890-4aa5-8f97-212c370712dc.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\7a566a19-6890-4aa5-8f97-212c370712dc.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\7cc7abaa-033f-46e2-8209-1febf882829d.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\7cc7abaa-033f-46e2-8209-1febf882829d.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\8d5577da-9a95-40c4-9853-72924d0270d5.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\8d5577da-9a95-40c4-9853-72924d0270d5.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\9bdf774f-2ad5-47d0-a275-9fae3fca24ce.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\9bdf774f-2ad5-47d0-a275-9fae3fca24ce.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\c66638c7-7667-40a2-8bcc-77f593181ac0.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\c66638c7-7667-40a2-8bcc-77f593181ac0.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\cfd968e0-860e-4319-bf1c-1c51d8bbaa05.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\cfd968e0-860e-4319-bf1c-1c51d8bbaa05.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\d5c1bafd-dac7-4de0-9ea3-08c3598a3c09.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\d5c1bafd-dac7-4de0-9ea3-08c3598a3c09.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\e00a64a8-a151-4971-bdd8-0a0bf0b5ad83.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\e00a64a8-a151-4971-bdd8-0a0bf0b5ad83.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\e249cce6-a11b-45a9-920e-723c7881c419.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\e249cce6-a11b-45a9-920e-723c7881c419.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\imgArticle\\edafcd87-c55b-408c-9aaf-fa050e6e07ea.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\imgArticle\\edafcd87-c55b-408c-9aaf-fa050e6e07ea.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\14F7D0AC-B2BB-4983-857A-EDF2367251E7.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\14F7D0AC-B2BB-4983-857A-EDF2367251E7.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\19F819A6-C8A9-4A87-853C-9BF72E4103AB.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\19F819A6-C8A9-4A87-853C-9BF72E4103AB.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\1d9cf0a3-2f19-43c0-975d-3bf447adef80.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\1d9cf0a3-2f19-43c0-975d-3bf447adef80.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\2452178A-78F5-4D4A-92B7-BDACC59E163A.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\2452178A-78F5-4D4A-92B7-BDACC59E163A.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\332EF91D-FBB1-41D6-8928-711CB8484F1F.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\332EF91D-FBB1-41D6-8928-711CB8484F1F.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\350C93B9-9EC2-4BD6-BFB5-8394F4D99754.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\350C93B9-9EC2-4BD6-BFB5-8394F4D99754.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\4C0FA8EC-DB32-4E94-9F66-7FE1852D55CE.docx",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\4C0FA8EC-DB32-4E94-9F66-7FE1852D55CE.docx"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\5882B0CA-8ABC-41E5-A74B-24974F0C095F.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\5882B0CA-8ABC-41E5-A74B-24974F0C095F.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\630D307E-84AF-4435-BA3F-DEAB3CC15E45.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\630D307E-84AF-4435-BA3F-DEAB3CC15E45.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\92DBB9EF-22C2-4F6F-9CEC-FCF6A00F1824.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\92DBB9EF-22C2-4F6F-9CEC-FCF6A00F1824.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\A1F3AABB-1111-1111-1111-111111111111.JPG",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\A1F3AABB-1111-1111-1111-111111111111.JPG"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\A1F3AABB-1111-1111-1111-111111111111.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\A1F3AABB-1111-1111-1111-111111111111.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\A9FB7EE2-FDE4-409E-A784-F217ADA0134C.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\A9FB7EE2-FDE4-409E-A784-F217ADA0134C.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\ADBE0E56-2D51-4987-99C2-DAA72C0FD150.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\ADBE0E56-2D51-4987-99C2-DAA72C0FD150.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\BB7E485D-2AB3-4D84-8F03-34A64E42E44B.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\BB7E485D-2AB3-4D84-8F03-34A64E42E44B.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\C70FB45C-5FAA-44CE-8BE2-7D916B87D422.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\C70FB45C-5FAA-44CE-8BE2-7D916B87D422.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\E7E70733-063F-44B4-A206-877D7204333A.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\E7E70733-063F-44B4-A206-877D7204333A.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\E85F8723-5DF4-407F-B002-60D28EF1A3F3.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\E85F8723-5DF4-407F-B002-60D28EF1A3F3.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\F3D3D5EA-C754-4353-A18C-50467C7588DA.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\F3D3D5EA-C754-4353-A18C-50467C7588DA.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\bf438f72-1600-4ce8-a35f-dfd6fd784491.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\bf438f72-1600-4ce8-a35f-dfd6fd784491.jpg"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\images\\useravars\\c07516ec-3f5e-42ec-b741-3bf2c7bf2b76.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\useravars\\c07516ec-3f5e-42ec-b741-3bf2c7bf2b76.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\js\\ionicons.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\ionicons.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\js\\notifier_message.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\notifier_message.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\js\\p-d15ec307.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\p-d15ec307.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\js\\site.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\js\\togglepassword.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\togglepassword.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5-content.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5-content.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5-editor.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5-editor.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5.css.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5.umd.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5.umd.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\ckeditor5.umd.js.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\ckeditor5.umd.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\ckediter5\\translations\\vi.umd.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\ckediter5\\translations\\vi.umd.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\datatables\\datatables.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\datatables\\datatables.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\datatables\\datatables.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\datatables\\datatables.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\datatables\\datatables.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\datatables\\datatables.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\datatables\\datatables.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\datatables\\datatables.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\datatables\\vi.json",
+      "PackagePath": "staticwebassets\\Admin\\lib\\datatables\\vi.json"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\Admin\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Admin\\listenerTickets\\negotiate.html",
+      "PackagePath": "staticwebassets\\Admin\\listenerTickets\\negotiate.html"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p001_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p001_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p002_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p002_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p003_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p003_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p004_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p004_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p005_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p005_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p006_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p006_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p007_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p007_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p008_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p008_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p009_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p009_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p010_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p010_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p011_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p011_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p012_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p012_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p013_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p013_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p014_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p014_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p015_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p015_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p016_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p016_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p017_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p017_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p018_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p018_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p019_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p019_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerQuerys\\p020_answer_query.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerQuerys\\p020_answer_query.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p001_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p001_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p001_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p001_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p002_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p002_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p002_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p002_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p003_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p003_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p003_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p003_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p004_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p004_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p004_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p004_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p005_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p005_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p005_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p005_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p006_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p006_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p006_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p006_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p007_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p007_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p007_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p007_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p008_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p008_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p008_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p008_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p009_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p009_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p009_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p009_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p010_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p010_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p010_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p010_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p011_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p011_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p011_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p011_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p011_testcase3.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p011_testcase3.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p012_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p012_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p012_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p012_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p013_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p013_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p013_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p013_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p013_testcase3.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p013_testcase3.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p014_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p014_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p014_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p014_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p015_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p015_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p015_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p015_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p016_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p016_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p016_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p016_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p016_testcase3.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p016_testcase3.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p017_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p017_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p017_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p017_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p018_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p018_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p018_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p018_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p019_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p019_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p019_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p019_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p019_testcase3.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p019_testcase3.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p020_testcase1.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p020_testcase1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\AnswerResults\\p020_testcase2.csv",
+      "PackagePath": "staticwebassets\\Data\\AnswerResults\\p020_testcase2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\bank_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\bank_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\bank_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\bank_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\employee_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\employee_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\employee_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\employee_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\hospital_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\hospital_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\hospital_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\hospital_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\hotel_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\hotel_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\hotel_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\hotel_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\library_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\library_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\library_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\library_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\movie_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\movie_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\movie_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\movie_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\restaurant_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\restaurant_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\restaurant_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\restaurant_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\school_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\school_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\school_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\school_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\shop_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\shop_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\shop_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\shop_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\university_data1.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\university_data1.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\InitData\\university_data2.csv",
+      "PackagePath": "staticwebassets\\Data\\InitData\\university_data2.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\bank_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\bank_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\employee_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\employee_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\hospital_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\hospital_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\hotel_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\hotel_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\library_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\library_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\movie_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\movie_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\restaurant_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\restaurant_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\school_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\school_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\shop_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\shop_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\Data\\Schemas\\university_schema.csv",
+      "PackagePath": "staticwebassets\\Data\\Schemas\\university_schema.csv"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\avatar-default.png",
+      "PackagePath": "staticwebassets\\images\\avatar-default.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\avatars\\295de8e4-0eab-47d4-9b80-f0ab04928c58.png",
+      "PackagePath": "staticwebassets\\images\\avatars\\295de8e4-0eab-47d4-9b80-f0ab04928c58.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\avatars\\52312e0f-7a74-44c3-83ea-a2075b9e2ad6.png",
+      "PackagePath": "staticwebassets\\images\\avatars\\52312e0f-7a74-44c3-83ea-a2075b9e2ad6.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\avatars\\6fcb527c-b6b4-4bf9-9aca-cc1ec8df1393.png",
+      "PackagePath": "staticwebassets\\images\\avatars\\6fcb527c-b6b4-4bf9-9aca-cc1ec8df1393.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\coding-icon.png",
+      "PackagePath": "staticwebassets\\images\\coding-icon.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\cursor-vip_darwin_amd64",
+      "PackagePath": "staticwebassets\\images"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\database-icon.png",
+      "PackagePath": "staticwebassets\\images\\database-icon.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Learning\\DoAn\\ProCoder\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProCoder.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProCoder.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ProCoder.props",
+      "PackagePath": "build\\ProCoder.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ProCoder.props",
+      "PackagePath": "buildMultiTargeting\\ProCoder.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ProCoder.props",
+      "PackagePath": "buildTransitive\\ProCoder.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

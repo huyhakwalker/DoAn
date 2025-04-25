@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+:root {
+    --main-color: #452189;
+    --color-dark: #1d2231;
+    --text-grey: #f2f2f2;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Mulish", sans-serif;
+}
+
+.vinhsidebar {
+    width: 300px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: 100;
+    transition: width 300ms;
+}
+
+.vinhsidebar-brand {
+    height: 90px;
+    padding: 1rem 0rem 1rem 2rem;
+    color: #fff;
+}
+
+.vinhsidebar-brand span {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.vinhsidebar-menu {
+    margin-top: 1rem;
+}
+
+.vinhsidebar-menu li a span:first-child {
+    width: 40px;
+}
+
+.vinhsidebar-menu li {
+    width: 100%;
+    margin-bottom: 1.7rem;
+    padding-left: 1rem;
+}
+
+.vinhsidebar-menu a {
+    padding-left: 1rem;
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.vinhsidebar-menu a:hover span {
+    text-decoration: none !important;
+}
+
+.vinhsidebar-menu a.active {
+    background: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--main-color);
+    border-radius: 30px 0 0 30px;
+}
+
+.vinhsidebar-menu a span:first-child {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+#vinhnav-toggle:checked+.vinhsidebar {
+    width: 70px;
+}
+
+#vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-brand,
+#vinhnav-toggle:checked+.vinhsidebar li {
+    padding-left: 1rem;
+    text-align: center;
+}
+
+/*muốn thanh nav ko còn trống thì sửa lại 0*/
+
+#vinhnav-toggle:checked+.vinhsidebar li a {
+    padding-left: 0rem;
+}
+
+#vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-brand h2 span:last-child,
+#vinhnav-toggle:checked+.vinhsidebar li a span:last-child {
+    display: none;
+}
+
+#vinhnav-toggle:checked~.vinhmain-content {
+    margin-left: 70px;
+}
+
+#vinhnav-toggle:checked~.vinhmain-content .vinhheader {
+    width: calc(100% - 70px);
+    left: 70px;
+}
+
+.vinhmain-content {
+    transition: margin-left 300ms;
+    margin-left: 300px;
+}
+
+.vinhheader {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 300px;
+    width: calc(100% - 300px);
+    top: 0;
+    z-index: 100;
+    transition: left 300ms;
+}
+
+#vinhnav-toggle {
+    display: none;
+}
+
+.vinhheader h2 {
+    color: #222;
+}
+
+.vinhsearch-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.vinhsearch-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.vinhsearch-wrapper input {
+    height: 100%;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+.vinhuser-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.vinhuser-wrapper img {
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.vinhuser-wrapper small {
+    display: inline-block;
+    color: #222;
+    margin-top: -10px !important;
+}
+
+.vinhmain {
+    margin-top: 85px;
+    padding: 2rem 1.5rem;
+    background: #f1f5f9;
+    min-height: 87vh;
+    overflow: hidden;
+}
+
+/*responsive*/
+
+@media only screen and (max-width: 1200px) {}
+
+@media only screen and (max-width: 960px) {
+    .vinhsidebar {
+        /* width: 70px; */
+    }
+    .vinhsidebar .vinhsidebar-brand,
+    .vinhsidebar li {
+        padding-left: 1rem;
+        text-align: center;
+    }
+    .vinhsidebar li a {
+        padding-left: 0rem;
+    }
+    .vinhsidebar .vinhsidebar-brand h2 span:first-child,
+    .vinhsidebar .vinhsidebar-menu li a span:first-child {
+        display: none;
+    }
+    .vinhmain-content {
+        /* margin-left: 70px; */
+        margin-left: 345px;
+    }
+    .vinhmain-content header {
+        width: calc(100% - 70px);
+        left: 70px;
+    }
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-brand h2 span:first-child,
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-menu li a span:first-child {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .vinhsearch-wrapper {
+        display: none;
+    }
+    .vinhsidebar {
+        left: -100% !important;
+    }
+    .vinhheader h2 {
+        display: flex;
+        align-items: center;
+    }
+    .vinhheader h2 lable {
+        display: inline-block;
+        background: var(--main-color);
+        padding-right: 0rem;
+        margin-right: 1rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+    }
+    .vinhheader h2 span {
+        text-align: center;
+        padding-right: 0rem;
+    }
+    .vinhheader h2 {
+        font-size: 1.2rem;
+    }
+    .vinhmain-content {
+        width: 100%;
+        margin-left: 0rem;
+    }
+    .vinhheader {
+        width: 100% !important;
+        left: 0 !important;
+    }
+    #vinhnav-toggle:checked+.vinhsidebar {
+        left: 0 !important;
+        z-index: 100;
+        width: 345px;
+    }
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-brand,
+    #vinhnav-toggle:checked+.vinhsidebar li {
+        padding-left: 2rem;
+        text-align: left;
+    }
+    #vinhnav-toggle:checked+.vinhsidebar li a {
+        padding-left: 1rem;
+    }
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-brand h2 span:last-child,
+    #vinhnav-toggle:checked+.vinhsidebar li a span:last-child {
+        display: inline;
+    }
+    #vinhnav-toggle:checked~.vinhmain-content {
+        margin-left: 0rem !important;
+    }
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-brand h2 span:first-child,
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-menu li a span:first-child {
+        display: none;
+    }
+}
+
+/*Cái toggle đóng mở nav*/
+
+.vinhheader label span {
+    font-size: 1.4rem;
+    padding: 9.5px 20px 12px 20px;
+    /* Khoảng cách bên trong */
+    cursor: pointer;
+    /* Hiển thị con trỏ chuột hình bàn tay */
+    border-radius: 5px;
+    /* Bo góc tròn */
+    color: #fff;
+    /* Màu chữ */
+    background: linear-gradient(135deg, #452189, #452189);
+    /* Màu gradient */
+    transition: all 0.3s ease;
+    /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.vinhheader label span:hover {
+    background: linear-gradient(135deg, #452189, #6a11cb);
+    /* Đổi màu gradient khi hover */
+    color: #fff;
+    transform: translateY(-1px);
+    /* Nút hơi nổi lên khi hover */
+}
+
+.custom-btnvinh {
+    display: inline-flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    background: linear-gradient(135deg, #452189, #452189);
+    /* Màu gradient */
+    color: #fff;
+    /* Màu chữ */
+    font-size: 1rem;
+    /* Kích thước chữ/icon */
+    padding: 8px 20px;
+    /* Khoảng cách bên trong */
+    border: none;
+    /* Xóa viền */
+    border-radius: 5px;
+    /* Bo góc */
+    text-decoration: none;
+    /* Xóa gạch chân */
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.custom-btnvinh i {
+    margin: 0;
+    /* Xóa khoảng cách giữa icon và nội dung */
+    font-size: 1.5rem;
+    /* Tăng kích thước icon nếu cần */
+}
+
+.custom-btnvinh:hover {
+    background: linear-gradient(135deg, #452189, #6a11cb);
+    /* Đổi màu khi hover */
+    transform: translateY(-1px);
+    /* Hiệu ứng nổi khi hover */
+    color: #fff;
+}
+
+@media only screen and (max-width: 480px) {
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-brand h2 span:first-child,
+    #vinhnav-toggle:checked+.vinhsidebar .vinhsidebar-menu li a span:first-child {
+        display: none;
+    }
+    .vinhheader label span {
+        font-size: 1.2rem;
+        padding: 9.5px 20px 12px 20px;
+        /* Khoảng cách bên trong */
+        cursor: pointer;
+        /* Hiển thị con trỏ chuột hình bàn tay */
+        border-radius: 5px;
+        /* Bo góc tròn */
+        color: #fff;
+        /* Màu chữ */
+        background: linear-gradient(135deg, #452189, #452189);
+        /* Màu gradient */
+        transition: all 0.3s ease;
+        /* Hiệu ứng chuyển đổi mượt mà */
+    }
+    .vinhheader {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.9rem 0.5rem;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        left: 345px;
+        width: calc(100% - 345px);
+        top: 0;
+        z-index: 100;
+        transition: left 300ms;
+    }
+    .AnAnhDi {
+        display: none;
+    }
+    .vinhuser-wrapper img {
+        margin-right: 0;
+    }
+}

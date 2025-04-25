@@ -1,0 +1,1 @@
+SELECT TOP 1 ProductName, Price FROM Products ORDER BY Price DESC; 

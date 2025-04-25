@@ -1,0 +1,17 @@
+-- Thêm dữ liệu vào bảng Movies
+INSERT INTO Movies (MovieID, Title, ReleaseDate, Duration, Genre, Director, Rating) VALUES
+(1, N'Cuộc Phiêu Lưu Của Pi', '2024-01-15', 120, 'Adventure', 'Steven Spielberg', 8.5),
+(2, N'Tình Yêu Và Định Mệnh', '2024-01-20', 105, 'Romance', 'Nancy Meyers', 7.8),
+(3, N'Siêu Anh Hùng: Tận Thế', '2024-01-25', 150, 'Action', 'Christopher Nolan', 9.0),
+(4, N'Bí Mật Đêm Qua', '2024-01-30', 95, 'Thriller', 'David Fincher', 8.2);
+
+-- Thêm dữ liệu vào bảng Screenings
+INSERT INTO Screenings (ScreeningID, MovieID, TheaterNumber, ScreeningTime, Price, AvailableSeats) VALUES
+(1, 1, 1, '2024-02-15 10:00:00', 90000.00, 100),
+(2, 1, 1, '2024-02-15 13:00:00', 90000.00, 80),
+(3, 2, 2, '2024-02-15 11:00:00', 85000.00, 120),
+(4, 2, 2, '2024-02-15 14:00:00', 85000.00, 90),
+(5, 3, 3, '2024-02-15 12:00:00', 100000.00, 150),
+(6, 3, 3, '2024-02-15 15:00:00', 100000.00, 130),
+(7, 4, 4, '2024-02-15 13:30:00', 95000.00, 110),
+(8, 4, 4, '2024-02-15 16:30:00', 95000.00, 100); 

@@ -1,0 +1,11 @@
+SELECT TOP 3
+    m.Title,
+    m.Genre,
+    m.Director,
+    m.Rating,
+    COUNT(s.ScreeningID) as ScreeningCount,
+    SUM(s.Price * (200 - s.AvailableSeats)) as TotalRevenue
+FROM Movies m
+JOIN Screenings s ON m.MovieID = s.MovieID
+GROUP BY m.Title, m.Genre, m.Director, m.Rating
+ORDER BY TotalRevenue DESC; 

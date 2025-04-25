@@ -1,0 +1,14 @@
+-- Thêm dữ liệu vào bảng Departments
+INSERT INTO Departments (DepartmentID, DepartmentName, Location) VALUES
+(1, 'IT', 'Floor 1'),
+(2, 'HR', 'Floor 2'),
+(3, 'Finance', 'Floor 3'),
+(4, 'Marketing', 'Floor 2');
+
+-- Thêm dữ liệu vào bảng Employees
+INSERT INTO Employees (EmployeeID, FirstName, LastName, DepartmentID, Position, Salary, HireDate) VALUES
+(1, 'John', 'Smith', 1, 'Senior Developer', 75000.00, '2020-01-15'),
+(2, 'Mary', 'Johnson', 2, 'HR Manager', 65000.00, '2019-06-20'),
+(3, 'David', 'Brown', 1, 'Developer', 60000.00, '2021-03-10'),
+(4, 'Lisa', 'Davis', 3, 'Financial Analyst', 62000.00, '2020-09-01'),
+(5, 'Michael', 'Wilson', 4, 'Marketing Manager', 68000.00, '2019-11-15'); 

@@ -1,0 +1,16 @@
+SELECT 
+    s.SubjectName,
+    c.ClassName,
+    st.FirstName + ' ' + st.LastName as StudentName,
+    g.Score,
+    RANK() OVER (PARTITION BY s.SubjectName ORDER BY g.Score DESC) as ScoreRank
+FROM Subjects s
+JOIN Grades g ON s.SubjectID = g.SubjectID
+JOIN Students st ON g.StudentID = st.StudentID
+JOIN Classes c ON st.ClassID = c.ClassID
+WHERE g.Score = (
+    SELECT MAX(Score)
+    FROM Grades g2
+    WHERE g2.SubjectID = s.SubjectID
+)
+ORDER BY s.SubjectName, g.Score DESC; 

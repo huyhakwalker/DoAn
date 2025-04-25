@@ -1,0 +1,156 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Thống kê hệ thống";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-2">
+    <!-- Tiêu đề báo cáo -->
+    <div class="text-center mb-2">
+        <h2>Báo cáo thống kê hệ thống</h2>
+        <p class="lead">Theo dõi người dùng, bài tập và kết quả làm bài</p>
+    </div>
+
+    <!-- Tổng số liệu -->
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tổng người dùng</h5>
+                    <p class="fst-italic text-small">đã đăng ký</p>
+                    <p class="card-text display-4">150</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tổng bài tập</h5>
+                    <p class="fst-italic text-small">đã tạo</p>
+                    <p class="card-text display-4">75</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Bài nộp</h5>
+                    <p class="fst-italic text-small">trong tháng</p>
+                    <p class="card-text display-4">320</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biểu đồ thống kê -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Thống kê người dùng theo vai trò</h5>
+                    <canvas id="roleChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Thống kê bài nộp theo kết quả</h5>
+                    <canvas id="submissionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top người dùng -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Top 5 người dùng có điểm cao nhất</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tên người dùng</th>
+                                <th>Email</th>
+                                <th>Số bài đã làm</th>
+                                <th>Tổng điểm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nguyễn Văn A</td>
+                                <td>nguyenvana@example.com</td>
+                                <td>45</td>
+                                <td>450</td>
+                            </tr>
+                            <tr>
+                                <td>Trần Thị B</td>
+                                <td>tranthib@example.com</td>
+                                <td>42</td>
+                                <td>420</td>
+                            </tr>
+                            <!-- Thêm 3 hàng dữ liệu nữa -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biểu đồ hoạt động -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Thống kê hoạt động theo tháng</h5>
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Biểu đồ vai trò người dùng
+    new Chart(document.getElementById('roleChart').getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: ['Admin', 'Contest Setter', 'User'],
+            datasets: [{
+                data: [5, 15, 130],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+        }
+    });
+
+    // Biểu đồ kết quả bài nộp
+    new Chart(document.getElementById('submissionChart').getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: ['Đúng', 'Sai', 'Đang chờ'],
+            datasets: [{
+                data: [250, 50, 20],
+                backgroundColor: ['#4BC0C0', '#FF6384', '#36A2EB']
+            }]
+        }
+    });
+
+    // Biểu đồ hoạt động
+    new Chart(document.getElementById('activityChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'],
+            datasets: [{
+                label: 'Số bài nộp',
+                data: [65, 59, 80, 81, 56, 55],
+                borderColor: '#FF5733'
+            }]
+        }
+    });
+</script>

@@ -1,0 +1,17 @@
+-- Thêm dữ liệu vào bảng Departments
+INSERT INTO Departments (DepartmentID, DepartmentName, Location, HeadProfessor) VALUES
+(1, N'Khoa Công nghệ Thông tin', N'Tòa nhà A', N'GS. Nguyễn Văn A'),
+(2, N'Khoa Kinh tế', N'Tòa nhà B', N'GS. Trần Thị B'),
+(3, N'Khoa Ngoại ngữ', N'Tòa nhà C', N'GS. Lê Văn C'),
+(4, N'Khoa Kỹ thuật Điện', N'Tòa nhà D', N'GS. Phạm Thị D');
+
+-- Thêm dữ liệu vào bảng Students
+INSERT INTO Students (StudentID, FirstName, LastName, DepartmentID, EnrollmentDate, DateOfBirth, GPA) VALUES
+(1, N'Nguyễn', N'Văn Nam', 1, '2023-09-01', '2005-05-15', 3.50),
+(2, N'Trần', N'Thị Hoa', 1, '2023-09-01', '2005-07-20', 3.75),
+(3, N'Lê', N'Văn Bình', 2, '2023-09-01', '2005-03-10', 3.25),
+(4, N'Phạm', N'Thị Mai', 2, '2023-09-01', '2005-09-25', 3.80),
+(5, N'Hoàng', N'Văn Dũng', 3, '2023-09-01', '2005-04-12', 3.60),
+(6, N'Đỗ', N'Thị Lan', 3, '2023-09-01', '2005-08-30', 3.90),
+(7, N'Vũ', N'Văn Hùng', 4, '2023-09-01', '2005-06-18', 3.40),
+(8, N'Ngô', N'Thị Thảo', 4, '2023-09-01', '2005-11-05', 3.70); 

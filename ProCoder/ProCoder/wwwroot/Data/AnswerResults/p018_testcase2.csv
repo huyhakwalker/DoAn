@@ -1,0 +1,6 @@
+TypeName,BasePrice,Capacity,TotalRooms,BookedRooms,OccupancyRate,CurrentRevenue
+Presidential Suite,8000000.00,6,2,0,0.00,0.00
+Family Suite,3500000.00,4,2,1,50.00,3500000.00
+Family Standard,2000000.00,4,2,1,50.00,2000000.00
+Double Deluxe,1800000.00,2,3,1,33.33,1800000.00
+Double Standard,1200000.00,2,3,1,33.33,1200000.00 

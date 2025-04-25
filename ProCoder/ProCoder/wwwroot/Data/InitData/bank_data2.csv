@@ -1,0 +1,20 @@
+-- Thêm dữ liệu vào bảng Customers
+INSERT INTO Customers (CustomerID, FirstName, LastName, DateOfBirth, Address, Phone) VALUES
+(1, N'Hoàng', N'Văn Em', '1982-07-18', N'147 Hai Bà Trưng, Q1, TP.HCM', '0945678901'),
+(2, N'Đỗ', N'Thị Phương', '1988-04-22', N'258 Lý Tự Trọng, Q1, TP.HCM', '0956789012'),
+(3, N'Vũ', N'Văn Giang', '1979-09-30', N'369 Trần Hưng Đạo, Q5, TP.HCM', '0967890123'),
+(4, N'Ngô', N'Thị Hương', '1992-11-05', N'741 Nguyễn Trãi, Q5, TP.HCM', '0978901234'),
+(5, N'Đặng', N'Văn Inh', '1983-02-14', N'852 Võ Văn Kiệt, Q1, TP.HCM', '0989012345');
+
+-- Thêm dữ liệu vào bảng Accounts
+INSERT INTO Accounts (AccountID, CustomerID, AccountType, Balance, OpenDate, Status) VALUES
+(1, 1, 'Personal Loan', -150000000.00, '2023-06-15', 'Active'),
+(2, 1, 'Credit Card', -25000000.00, '2023-07-20', 'Active'),
+(3, 2, 'Home Loan', -2000000000.00, '2023-01-10', 'Active'),
+(4, 2, 'Credit Card', -15000000.00, '2023-02-05', 'Active'),
+(5, 3, 'Business Loan', -500000000.00, '2023-03-28', 'Active'),
+(6, 3, 'Credit Card', -30000000.00, '2023-04-15', 'Frozen'),
+(7, 4, 'Car Loan', -300000000.00, '2023-08-12', 'Active'),
+(8, 4, 'Personal Loan', -100000000.00, '2023-09-30', 'Active'),
+(9, 5, 'Home Loan', -1500000000.00, '2023-05-20', 'Active'),
+(10, 5, 'Business Loan', -800000000.00, '2023-10-15', 'Active'); 

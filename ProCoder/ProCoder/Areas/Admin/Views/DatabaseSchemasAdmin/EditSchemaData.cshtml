@@ -1,0 +1,146 @@
+@model ProCoder.Models.SchemaData
+
+@{
+    ViewData["Title"] = "Chỉnh sửa dữ liệu mẫu";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section Styles {
+    <!-- Thêm CSS cho CodeMirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/monokai.min.css" />
+    <style>
+        .CodeMirror {
+            height: 500px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        #DataContentContainer {
+            position: relative;
+        }
+        #sqlLoading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Chỉnh sửa dữ liệu mẫu cho @ViewBag.Schema.SchemaName</h5>
+        </div>
+        <div class="card-body">
+            <form id="schemaDataForm" action="@Url.Action("EditSchemaData", "DatabaseSchemasAdmin", new { area = "Admin", schemaId = ViewBag.Schema.DatabaseSchemaId, dataId = Model.SchemaDataId })" method="post">
+                @Html.AntiForgeryToken()
+                <!-- Chỉ giữ ID của dữ liệu cần sửa -->
+                <input type="hidden" name="SchemaDataId" value="@Model.SchemaDataId" />
+
+                <div class="form-group mb-3">
+                    <label for="DataName" class="form-label">Tên dữ liệu</label>
+                    <input type="text" class="form-control" id="DataName" name="DataName" value="@Model.DataName" required />
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.DataName)</span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="DataContent" class="form-label">Nội dung dữ liệu</label>
+                    <div id="DataContentContainer">
+                        <textarea class="form-control" id="DataContent" name="DataContent" rows="20" required>@Model.DataContent</textarea>
+                        <div id="sqlLoading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Đang xử lý SQL...</p>
+                        </div>
+                    </div>
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.DataContent)</span>
+                    <small class="form-text text-muted">
+                        Có thể dán câu lệnh SQL INSERT dài, hệ thống đã được cấu hình để xử lý.
+                    </small>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Description" class="form-label">Mô tả</label>
+                    <textarea class="form-control" id="Description" name="Description" rows="3">@Model.Description</textarea>
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.Description)</span>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="@Url.Action("SchemaDataList", "DatabaseSchemasAdmin", new { area = "Admin", schemaId = ViewBag.Schema.DatabaseSchemaId })" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Quay lại
+                    </a>
+                    <button type="submit" id="submitBtn" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Lưu thay đổi
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Thêm thư viện CodeMirror cho SQL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/sql/sql.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Khởi tạo CodeMirror cho textarea SQL
+            var editor = CodeMirror.fromTextArea(document.getElementById("DataContent"), {
+                mode: 'text/x-sql',
+                lineNumbers: true,
+                theme: 'monokai',
+                indentWithTabs: true,
+                smartIndent: true,
+                lineWrapping: true,
+                matchBrackets: true,
+                autofocus: true
+            });
+
+            // Xử lý việc gửi form
+            $("#schemaDataForm").on("submit", function(e) {
+                try {
+                    $("#sqlLoading").show();
+                    
+                    // Cập nhật nội dung từ CodeMirror vào textarea
+                    editor.save();
+                    
+                    // Kiểm tra dữ liệu không trống
+                    var dataName = $("#DataName").val().trim();
+                    var dataContent = editor.getValue().trim();
+                    
+                    if (!dataName) {
+                        alert("Vui lòng nhập tên dữ liệu");
+                        $("#sqlLoading").hide();
+                        return false;
+                    }
+                    
+                    if (!dataContent) {
+                        alert("Vui lòng nhập nội dung dữ liệu");
+                        $("#sqlLoading").hide();
+                        return false;
+                    }
+                    
+                    // Vô hiệu hóa nút submit để tránh việc gửi nhiều lần
+                    $("#submitBtn").prop("disabled", true);
+                    $("#submitBtn").html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Đang lưu...');
+                    
+                    // Tiếp tục submit form
+                    return true;
+                } catch (error) {
+                    console.error("Lỗi khi gửi form:", error);
+                    alert("Có lỗi xảy ra khi gửi form. Vui lòng thử lại!");
+                    $("#sqlLoading").hide();
+                    return false;
+                }
+            });
+        });
+    </script>
+} 

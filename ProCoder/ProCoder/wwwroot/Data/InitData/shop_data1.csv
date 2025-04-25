@@ -1,0 +1,10 @@
+INSERT INTO Categories (CategoryID, CategoryName)
+VALUES 
+    (1, 'Electronics'),
+    (2, 'Books');
+
+INSERT INTO Products (ProductID, ProductName, CategoryID, Price)
+VALUES 
+    (1, 'Laptop', 1, 1200),
+    (2, 'SQL Guide', 2, 30),
+    (3, 'Smartphone', 1, 800); 

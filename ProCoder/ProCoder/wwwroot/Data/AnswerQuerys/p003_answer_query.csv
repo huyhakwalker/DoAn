@@ -1,0 +1,8 @@
+SELECT TOP 1 
+    e.FirstName + ' ' + e.LastName as EmployeeName,
+    d.DepartmentName,
+    e.Position,
+    e.Salary
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+ORDER BY e.Salary DESC; 

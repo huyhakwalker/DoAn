@@ -1,0 +1,12 @@
+SELECT 
+    c.CategoryName,
+    COUNT(d.DishID) as NumberOfDishes,
+    FORMAT(AVG(d.Price), 'N2') as AveragePrice,
+    FORMAT(MIN(d.Price), 'N2') as MinPrice,
+    FORMAT(MAX(d.Price), 'N2') as MaxPrice,
+    SUM(CASE WHEN d.IsSpicy = 1 THEN 1 ELSE 0 END) as SpicyDishes,
+    SUM(CASE WHEN d.IsVegetarian = 1 THEN 1 ELSE 0 END) as VegetarianDishes
+FROM Categories c
+LEFT JOIN Dishes d ON c.CategoryID = d.CategoryID
+GROUP BY c.CategoryName
+ORDER BY AVG(d.Price) DESC; 

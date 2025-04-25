@@ -1,0 +1,5 @@
+DepartmentName,Location,HeadProfessor,NumberOfStudents,AverageGPA,MinGPA,MaxGPA,DepartmentRank
+Khoa Ngoại ngữ,Tòa nhà C,GS. Lê Văn C,2,3.75,3.60,3.90,1
+Khoa Công nghệ Thông tin,Tòa nhà A,GS. Nguyễn Văn A,2,3.63,3.50,3.75,2
+Khoa Kỹ thuật Điện,Tòa nhà D,GS. Phạm Thị D,2,3.55,3.40,3.70,3
+Khoa Kinh tế,Tòa nhà B,GS. Trần Thị B,2,3.53,3.25,3.80,4 

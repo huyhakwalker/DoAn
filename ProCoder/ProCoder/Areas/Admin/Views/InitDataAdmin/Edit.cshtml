@@ -1,0 +1,48 @@
+@model ProCoder.Models.InitData
+
+@{
+    ViewData["Title"] = "Chỉnh sửa InitData";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            <form action="@Url.Action("Edit", "InitDataAdmin", new { area = "Admin", id = Model.InitDataId })" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="InitDataId" value="@Model.InitDataId" />
+                <input type="hidden" name="DatabaseSchemaId" value="@Model.DatabaseSchemaId" />
+
+                <div class="form-group mb-3">
+                    <label for="DataName" class="form-label">Tên dữ liệu</label>
+                    <input type="text" class="form-control" id="DataName" name="DataName"
+                           value="@Model.DataName" required />
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.DataName)</span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DataContentPath" class="form-label">Nội dung dữ liệu</label>
+                    <textarea asp-for="DataContentPath" class="form-control" rows="6">@Model.DataContentPath</textarea>
+                    <span asp-validation-for="DataContentPath" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Description" class="form-label">Mô tả</label>
+                    <textarea class="form-control" id="Description" name="Description"
+                            rows="4">@Model.Description</textarea>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-save"></i> Lưu thay đổi
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+} 

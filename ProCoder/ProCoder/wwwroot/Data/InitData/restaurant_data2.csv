@@ -1,0 +1,20 @@
+-- Thêm dữ liệu vào bảng Categories
+INSERT INTO Categories (CategoryID, CategoryName, Description) VALUES
+(1, 'Italian', N'Món ăn Ý'),
+(2, 'French', N'Món ăn Pháp'),
+(3, 'American', N'Món ăn Mỹ'),
+(4, 'Mexican', N'Món ăn Mexico'),
+(5, 'Mediterranean', N'Món ăn Địa Trung Hải');
+
+-- Thêm dữ liệu vào bảng Dishes
+INSERT INTO Dishes (DishID, DishName, CategoryID, Price, Description, IsSpicy, IsVegetarian) VALUES
+(1, 'Pizza Margherita', 1, 150000.00, N'Pizza truyền thống với sốt cà chua và phô mai', 0, 1),
+(2, 'Coq au Vin', 2, 220000.00, N'Gà hầm rượu vang đỏ', 0, 0),
+(3, 'Hamburger', 3, 120000.00, N'Burger bò với phô mai', 0, 0),
+(4, 'Tacos', 4, 95000.00, N'Tacos bò cay', 1, 0),
+(5, 'Pasta Carbonara', 1, 135000.00, N'Mì Ý với sốt kem và thịt xông khói', 0, 0),
+(6, 'Ratatouille', 2, 180000.00, N'Món hầm rau củ kiểu Pháp', 0, 1),
+(7, 'BBQ Ribs', 3, 250000.00, N'Sườn nướng BBQ', 0, 0),
+(8, 'Enchiladas', 4, 110000.00, N'Enchiladas gà', 1, 0),
+(9, 'Greek Salad', 5, 85000.00, N'Salad Hy Lạp với phô mai Feta', 0, 1),
+(10, 'Moussaka', 5, 165000.00, N'Moussaka cà tím truyền thống', 0, 0); 

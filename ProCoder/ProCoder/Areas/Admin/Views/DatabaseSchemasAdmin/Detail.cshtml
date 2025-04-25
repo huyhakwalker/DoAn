@@ -1,0 +1,120 @@
+@model ProCoder.Models.DatabaseSchema
+
+@{
+    ViewData["Title"] = "Chi tiết Schema";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết Schema</h6>
+            <div class="d-flex gap-2">
+                <a href="@Url.Action("Edit", "DatabaseSchemasAdmin", new { area = "Admin", id = Model.DatabaseSchemaId })" class="btn btn-warning">
+                    <i class="fas fa-edit"></i> Chỉnh sửa
+                </a>
+                <button type="button" class="btn btn-danger" onclick="confirmDelete(@Model.DatabaseSchemaId)">
+                    <i class="fas fa-trash"></i> Xóa
+                </button>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label fw-bold">Tên Schema</label>
+                <p class="form-control">@Model.SchemaName</p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Định nghĩa Schema</label>
+                <pre class="form-control" style="white-space: pre-wrap;">@Model.SchemaDefinition</pre>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Mô tả</label>
+                <p class="form-control">@Model.Description</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card shadow-sm mt-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Dữ liệu mẫu cho Schema</h6>
+            <a href="@Url.Action("SchemaDataList", "DatabaseSchemasAdmin", new { area = "Admin", schemaId = Model.DatabaseSchemaId })" class="btn btn-primary">
+                <i class="fas fa-database"></i> Quản lý dữ liệu
+            </a>
+        </div>
+        
+        <div class="card-body">
+            @if(Model.SchemaDatas != null && Model.SchemaDatas.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên dữ liệu</th>
+                                <th>Mô tả</th>
+                                <th>Ngày tạo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 1;
+                                foreach (var data in Model.SchemaDatas)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>@data.DataName</td>
+                                        <td>@data.Description</td>
+                                        <td>@data.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info">
+                    Chưa có dữ liệu mẫu nào cho schema này.
+                    <a href="@Url.Action("CreateSchemaData", "DatabaseSchemasAdmin", new { area = "Admin", schemaId = Model.DatabaseSchemaId })" class="alert-link">
+                        Thêm dữ liệu mẫu
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Xác nhận xóa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn xóa schema này không?
+            </div>
+            <div class="modal-footer">
+                <form id="deleteForm" action="" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-danger">Xóa</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            $('#deleteForm').attr('action', `/Admin/DatabaseSchemasAdmin/Delete/${id}`);
+            $('#deleteModal').modal('show');
+        }
+    </script>
+} 

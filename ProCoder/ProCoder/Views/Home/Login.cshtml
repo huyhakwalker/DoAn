@@ -1,0 +1,127 @@
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<div class="row justify-content-center min-vh-100 align-items-center">
+    <div class="col-md-4">
+        <div class="card shadow-lg border-0">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-primary">@ViewData["Title"]</h2>
+                    <p class="text-muted">Chào mừng bạn quay trở lại!</p>
+                </div>
+
+                @if (!string.IsNullOrEmpty(ViewBag.Error))
+                {
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        @ViewBag.Error
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                }
+
+                <form method="post" action="@Url.Action("Login", "Home")">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="CoderEmail" name="CoderEmail"
+                               placeholder="Email" required>
+                        <label for="CoderEmail">Email</label>
+                    </div>
+
+                    <div class="form-floating mb-4 position-relative">
+                        <input type="password" class="form-control" id="Password" name="Password"
+                               placeholder="Mật khẩu" required>
+                        <label for="Password">Mật khẩu</label>
+                        <span class="password-toggle" onclick="togglePassword()">
+                            <i class="fas fa-eye" id="togglePassword"></i>
+                        </span>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+                        </button>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <p class="mb-0">
+                            Chưa có tài khoản?
+                            <a href="@Url.Action("Register", "Home")" class="fw-bold text-decoration-none" style="color: #0d6efd;">
+                                Đăng ký ngay
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-floating > label {
+        padding-left: 1rem;
+    }
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        padding: 0.8rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0b5ed7;
+            transform: translateY(-1px);
+        }
+
+    .text-primary {
+        color: #0d6efd !important;
+    }
+
+    .card {
+        border-radius: 1rem;
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #6c757d;
+        z-index: 10;
+    }
+
+        .password-toggle:hover {
+            color: #0d6efd;
+        }
+
+    #Password {
+        padding-right: 40px;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('Password');
+            const toggleIcon = document.getElementById('togglePassword');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+} 

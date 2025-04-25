@@ -1,0 +1,133 @@
+@model ProCoder.Models.Contest
+
+@{
+    ViewData["Title"] = "Tạo mới cuộc thi";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            <form action="@Url.Action("Create", "ContestsAdmin", new { area = "Admin" })" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="form-group mb-3">
+                    <label for="ContestName" class="form-label">Tên cuộc thi</label>
+                    <input type="text" class="form-control" id="ContestName" name="ContestName" required
+                           placeholder="Nhập tên cuộc thi" />
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.ContestName)</span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="ContestDescription" class="form-label">Mô tả</label>
+                    <textarea class="form-control" id="ContestDescription" name="ContestDescription" rows="4"
+                              placeholder="Nhập mô tả cuộc thi"></textarea>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="StartTime" class="form-label">Thời gian bắt đầu</label>
+                            <input type="datetime-local" class="form-control" id="StartTime" name="StartTime" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="EndTime" class="form-label">Thời gian kết thúc</label>
+                            <input type="datetime-local" class="form-control" id="EndTime" name="EndTime" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Duration" class="form-label">Thời gian làm bài (phút)</label>
+                            <input type="number" class="form-control" id="Duration" name="Duration" 
+                                   min="1" value="120" required />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="CoderId" class="form-label">Người tạo</label>
+                            <select class="form-select" id="CoderId" name="CoderId">
+                                @foreach (var coder in ViewBag.Coders)
+                                {
+                                    <option value="@coder.CoderId">@coder.CoderName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="FrozenTime" class="form-label">Thời gian đóng băng</label>
+                            <input type="number" class="form-control" id="FrozenTime" name="FrozenTime" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="RuleType" class="form-label">Loại luật</label>
+                            <select class="form-select" id="RuleType" name="RuleType">
+                                <option value="ACM">ACM</option>
+                                <option value="IOI">IOI</option>
+                                <option value="Custom">Custom</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="FailedPenalty" class="form-label">Điểm phạt khi sai</label>
+                            <input type="number" class="form-control" id="FailedPenalty" name="FailedPenalty"
+                                   min="0" value="0" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="StatusContest" class="form-label">Trạng thái</label>
+                            <select class="form-select" id="StatusContest" name="StatusContest">
+                                <option value="Pending">Chưa bắt đầu</option>
+                                <option value="Running">Đang diễn ra</option>
+                                <option value="Finished">Đã kết thúc</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Published" class="form-label">Công khai</label>
+                            <select class="form-select" id="Published" name="Published">
+                                <option value="false">Không</option>
+                                <option value="true">Có</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="RankingFinished" class="form-label">Đã hoàn thành xếp hạng</label>
+                            <select class="form-select" id="RankingFinished" name="RankingFinished">
+                                <option value="false">Không</option>
+                                <option value="true">Có</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-save"></i> Tạo cuộc thi
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+} 

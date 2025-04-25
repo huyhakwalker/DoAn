@@ -1,0 +1,20 @@
+-- Thêm dữ liệu vào bảng Classes
+INSERT INTO Classes (ClassID, ClassName, Grade, TeacherName, RoomNumber) VALUES
+(1, '3A', 3, 'Ms. Jennifer Lee', '301'),
+(2, '3B', 3, 'Mr. Robert Martinez', '302'),
+(3, '4A', 4, 'Ms. Elizabeth White', '401'),
+(4, '4B', 4, 'Mr. Thomas Garcia', '402'),
+(5, '5A', 5, 'Ms. Patricia Lopez', '501');
+
+-- Thêm dữ liệu vào bảng Students
+INSERT INTO Students (StudentID, FirstName, LastName, ClassID, DateOfBirth, Gender, Address) VALUES
+(1, 'Daniel', 'Martinez', 1, '2014-02-14', 'Male', '741 Oak Street'),
+(2, 'Ava', 'Thompson', 1, '2014-05-22', 'Female', '852 Pine Avenue'),
+(3, 'Ethan', 'Garcia', 2, '2014-08-17', 'Male', '963 Maple Road'),
+(4, 'Mia', 'Rodriguez', 2, '2014-11-30', 'Female', '159 Cedar Lane'),
+(5, 'Lucas', 'Lee', 3, '2013-03-25', 'Male', '357 Birch Street'),
+(6, 'Charlotte', 'Walker', 3, '2013-07-08', 'Female', '486 Elm Avenue'),
+(7, 'Mason', 'Hall', 4, '2013-09-19', 'Male', '753 Spruce Road'),
+(8, 'Amelia', 'Young', 4, '2013-12-03', 'Female', '951 Willow Lane'),
+(9, 'Henry', 'King', 5, '2012-04-16', 'Male', '264 Ash Street'),
+(10, 'Harper', 'Wright', 5, '2012-10-28', 'Female', '835 Poplar Avenue'); 

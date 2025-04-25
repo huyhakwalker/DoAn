@@ -1,0 +1,17 @@
+-- Thêm dữ liệu vào bảng Categories
+INSERT INTO Categories (CategoryID, CategoryName, Description) VALUES
+(1, 'Vietnamese', N'Món ăn truyền thống Việt Nam'),
+(2, 'Japanese', N'Món ăn Nhật Bản'),
+(3, 'Korean', N'Món ăn Hàn Quốc'),
+(4, 'Chinese', N'Món ăn Trung Hoa');
+
+-- Thêm dữ liệu vào bảng Dishes
+INSERT INTO Dishes (DishID, DishName, CategoryID, Price, Description, IsSpicy, IsVegetarian) VALUES
+(1, N'Phở Bò', 1, 65000.00, N'Phở bò truyền thống', 0, 0),
+(2, N'Sushi Cá Hồi', 2, 85000.00, N'Sushi cá hồi tươi', 0, 0),
+(3, N'Kimchi', 3, 35000.00, N'Kim chi cải thảo', 1, 1),
+(4, N'Dimsum', 4, 55000.00, N'Dimsum hải sản', 0, 0),
+(5, N'Bún Chả', 1, 45000.00, N'Bún chả Hà Nội', 0, 0),
+(6, N'Ramen', 2, 75000.00, N'Ramen thịt heo', 0, 0),
+(7, N'Bibimbap', 3, 70000.00, N'Cơm trộn Hàn Quốc', 1, 0),
+(8, N'Mì Xào Hải Sản', 4, 80000.00, N'Mì xào hải sản', 0, 0); 
