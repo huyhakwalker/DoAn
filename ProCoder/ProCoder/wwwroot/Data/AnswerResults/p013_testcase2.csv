@@ -1,5 +1,0 @@
-DepartmentName,Location,EmployeeCount,AverageSalary,MinSalary,MaxSalary,Positions
-Engineering,Floor 4,3,75000.00,65000.00,85000.00,Lead Engineer, Senior Engineer, Engineer
-Sales,Floor 1,2,70000.00,65000.00,75000.00,Sales Manager, Sales Representative
-Research,Floor 3,2,72500.00,70000.00,75000.00,Research Director, Research Analyst
-Operations,Floor 2,1,68000.00,68000.00,68000.00,Operations Manager 

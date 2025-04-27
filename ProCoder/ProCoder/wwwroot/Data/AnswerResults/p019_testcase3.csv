@@ -1,4 +1,0 @@
- CustomerName,Phone,TransactionCount,TotalAmount,AverageAmount,AccountTypes,TotalDeposits,TotalWithdrawals
-Lê Thị Hương,0945678901,12,850000000.00,70833333.33,Investment, Savings,900000000.00,50000000.00
-Hoàng Văn Minh,0923456789,10,720000000.00,72000000.00,Investment, Term Deposit,800000000.00,80000000.00
-Mai Thị Lan,0978901234,8,680000000.00,85000000.00,Investment, Checking,700000000.00,20000000.00

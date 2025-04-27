@@ -1,9 +1,0 @@
-DepartmentName,Floor,HeadDoctor,PatientName,AdmissionDate,DischargeDate,Diagnosis,RoomNumber
-Cardiology,2,Dr. John Smith,Robert Wilson,2024-01-15,2024-01-20,Hypertension,201
-Cardiology,2,Dr. John Smith,Mary Anderson,2024-01-16,,Heart Arrhythmia,202
-Neurology,3,Dr. Sarah Johnson,James Taylor,2024-01-14,2024-01-22,Migraine,301
-Neurology,3,Dr. Sarah Johnson,Patricia Martinez,2024-01-17,,Epilepsy,302
-Orthopedics,4,Dr. Emily Davis,David Lee,2024-01-15,2024-01-21,Fractured Hip,401
-Orthopedics,4,Dr. Emily Davis,Jennifer White,2024-01-18,,Knee Injury,402
-Pediatrics,1,Dr. Michael Brown,William Thomas,2024-01-13,2024-01-18,Pneumonia,101
-Pediatrics,1,Dr. Michael Brown,Elizabeth Garcia,2024-01-16,,Asthma,102 

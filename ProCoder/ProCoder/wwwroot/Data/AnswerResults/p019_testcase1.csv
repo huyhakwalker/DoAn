@@ -1,4 +1,0 @@
-CustomerName,Phone,TransactionCount,TotalAmount,AverageAmount,AccountTypes,TotalDeposits,TotalWithdrawals
-Phạm Thị Dung,0934567890,8,600000000.00,75000000.00,Savings, Term Deposit,650000000.00,50000000.00
-Trần Thị Bình,0912345678,6,375000000.00,62500000.00,Savings, Term Deposit,400000000.00,25000000.00
-Nguyễn Văn An,0901234567,4,250000000.00,62500000.00,Savings, Term Deposit,300000000.00,50000000.00 

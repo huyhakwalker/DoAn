@@ -1,9 +1,0 @@
-SELECT 
-    c.ClassName,
-    c.Grade,
-    c.TeacherName,
-    COUNT(s.StudentID) as StudentCount
-FROM Classes c
-LEFT JOIN Students s ON c.ClassID = s.ClassID
-GROUP BY c.ClassName, c.Grade, c.TeacherName
-ORDER BY c.Grade, c.ClassName; 

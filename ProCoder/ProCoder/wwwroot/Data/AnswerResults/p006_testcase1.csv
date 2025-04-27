@@ -1,9 +1,0 @@
-CategoryName,DishName,Price,IsSpicy,IsVegetarian
-Chinese,Mì Xào Hải Sản,80000.00,No,No
-Chinese,Dimsum,55000.00,No,No
-Japanese,Sushi Cá Hồi,85000.00,No,No
-Japanese,Ramen,75000.00,No,No
-Korean,Bibimbap,70000.00,Yes,No
-Korean,Kimchi,35000.00,Yes,Yes
-Vietnamese,Phở Bò,65000.00,No,No
-Vietnamese,Bún Chả,45000.00,No,No 

@@ -1,1 +1,0 @@
-SELECT a.AuthorName, COUNT(b.BookID) as BookCount FROM Authors a LEFT JOIN Books b ON a.AuthorID = b.AuthorID GROUP BY a.AuthorName 

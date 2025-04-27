@@ -1,6 +1,0 @@
-DepartmentName,Location,HeadProfessor,NumberOfStudents,AverageGPA,MinGPA,MaxGPA,DepartmentRank
-Khoa Cơ khí,Tòa nhà E,GS. Hoàng Văn E,2,3.90,3.85,3.95,1
-Khoa Y,Tòa nhà G,GS. Bùi Văn G,2,3.85,3.80,3.90,2
-Khoa Luật,Tòa nhà H,GS. Mai Thị H,2,3.70,3.65,3.75,3
-Khoa Xây dựng,Tòa nhà F,GS. Đặng Thị F,2,3.65,3.60,3.70,4
-Khoa Môi trường,Tòa nhà I,GS. Dương Văn I,2,3.50,3.45,3.55,5 

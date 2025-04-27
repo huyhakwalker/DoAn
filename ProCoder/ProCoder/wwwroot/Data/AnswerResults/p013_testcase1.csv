@@ -1,5 +1,0 @@
-DepartmentName,Location,EmployeeCount,AverageSalary,MinSalary,MaxSalary,Positions
-IT,Floor 1,2,67500.00,60000.00,75000.00,Senior Developer, Developer
-HR,Floor 2,1,65000.00,65000.00,65000.00,HR Manager
-Marketing,Floor 2,1,68000.00,68000.00,68000.00,Marketing Manager
-Finance,Floor 3,1,62000.00,62000.00,62000.00,Financial Analyst 
