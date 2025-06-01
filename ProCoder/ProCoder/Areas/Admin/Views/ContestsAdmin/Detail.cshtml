@@ -1,0 +1,238 @@
+@model ProCoder.Models.Contest
+
+@{
+    ViewData["Title"] = "Chi tiết cuộc thi";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết cuộc thi</h6>
+            <div class="d-flex gap-2">
+                <a href="@Url.Action("Edit", "ContestsAdmin", new { area = "Admin", id = Model.ContestId })" class="btn btn-warning">
+                    <i class="fas fa-edit"></i> Chỉnh sửa
+                </a>
+                <button type="button" class="btn btn-danger" onclick="confirmDelete(@Model.ContestId)">
+                    <i class="fas fa-trash"></i> Xóa
+                </button>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Tên cuộc thi</label>
+                        <p class="form-control">@Model.ContestName</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Mô tả</label>
+                        <p class="form-control" style="min-height: 100px;">@Model.ContestDescription</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Thời gian làm bài</label>
+                        <p class="form-control">@Model.Duration phút</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Trạng thái</label>
+                        <p class="form-control">
+                            @{
+                                string statusClass = Model.StatusContest == "Pending" ? "warning" : 
+                                                    (Model.StatusContest == "Running" ? "success" : "danger");
+                                string statusText = Model.StatusContest == "Pending" ? "Chưa bắt đầu" : 
+                                                  (Model.StatusContest == "Running" ? "Đang diễn ra" : "Đã kết thúc");
+                            }
+                            <span class="badge bg-@statusClass">@statusText</span>
+                        </p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Công khai</label>
+                        <p class="form-control">
+                            <span class="badge bg-@(Model.Published ? "success" : "secondary")">
+                                @(Model.Published ? "Có" : "Không")
+                            </span>
+                        </p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Thời gian bắt đầu</label>
+                        <p class="form-control">@Model.StartTime.ToString("dd/MM/yyyy HH:mm")</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Thời gian kết thúc</label>
+                        <p class="form-control">@Model.EndTime.ToString("dd/MM/yyyy HH:mm")</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Danh sách bài tập trong cuộc thi -->
+            <div class="mt-4">
+                <h5 class="font-weight-bold">Danh sách bài tập trong cuộc thi</h5>
+                
+                <!-- Form thêm bài tập vào cuộc thi -->
+                <div class="card mb-3">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">Thêm bài tập vào cuộc thi</h6>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="@Url.Action("AddProblem", "ContestsAdmin", new { area = "Admin" })">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="contestId" value="@Model.ContestId" />
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="problemId" class="form-label">Bài tập</label>
+                                        <select class="form-select" id="problemId" name="problemId" required>
+                                            <option value="">-- Chọn bài tập --</option>
+                                            @if (ViewBag.AvailableProblems != null)
+                                            {
+                                                foreach (var problem in ViewBag.AvailableProblems)
+                                                {
+                                                    <option value="@problem.Value">@problem.Text</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <label for="problemOrder" class="form-label">Thứ tự</label>
+                                        <input type="number" class="form-control" id="problemOrder" name="problemOrder" 
+                                               min="1" value="1" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <label for="pointProblem" class="form-label">Điểm</label>
+                                        <input type="number" class="form-control" id="pointProblem" name="pointProblem" 
+                                               min="1" value="10" required />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-plus"></i> Thêm bài tập
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                        @TempData["SuccessMessage"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                        @TempData["ErrorMessage"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Thứ tự</th>
+                                <th>Mã bài tập</th>
+                                <th>Tên bài tập</th>
+                                <th>Điểm</th>
+                                <th>Dạng bài</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.HasProblems != null && Model.HasProblems.Any())
+                            {
+                                @foreach (var hasProblem in Model.HasProblems.OrderBy(hp => hp.ProblemOrder))
+                                {
+                                    <tr>
+                                        <td>@hasProblem.ProblemOrder</td>
+                                        <td>@hasProblem.Problem.ProblemCode</td>
+                                        <td>@hasProblem.Problem.ProblemName</td>
+                                        <td>@hasProblem.PointProblem</td>
+                                        <td>@hasProblem.Problem.Theme.ThemeName</td>
+                                        <td class="text-center">
+                                            <a href="@Url.Action("Details", "ProblemsAdmin", new { area = "Admin", id = hasProblem.ProblemId })" class="btn btn-info btn-sm me-1" title="Xem chi tiết">
+                                                <i class="fas fa-info-circle"></i>
+                                            </a>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmRemoveProblem(@Model.ContestId, @hasProblem.ProblemId)" title="Xóa khỏi cuộc thi">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center">Cuộc thi này chưa có bài tập nào.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa cuộc thi này?')) {
+                fetch(`/Admin/ContestsAdmin/Delete/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = '/Admin/ContestsAdmin';
+                    }
+                });
+            }
+        }
+        
+        function confirmRemoveProblem(contestId, problemId) {
+            if (confirm('Bạn có chắc chắn muốn xóa bài tập này khỏi cuộc thi?')) {
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '/Admin/ContestsAdmin/RemoveProblem';
+                
+                const contestIdInput = document.createElement('input');
+                contestIdInput.type = 'hidden';
+                contestIdInput.name = 'contestId';
+                contestIdInput.value = contestId;
+                
+                const problemIdInput = document.createElement('input');
+                problemIdInput.type = 'hidden';
+                problemIdInput.name = 'problemId';
+                problemIdInput.value = problemId;
+                
+                const tokenInput = document.createElement('input');
+                tokenInput.type = 'hidden';
+                tokenInput.name = '__RequestVerificationToken';
+                tokenInput.value = document.querySelector('input[name="__RequestVerificationToken"]').value;
+                
+                form.appendChild(contestIdInput);
+                form.appendChild(problemIdInput);
+                form.appendChild(tokenInput);
+                
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+    </script>
+} 

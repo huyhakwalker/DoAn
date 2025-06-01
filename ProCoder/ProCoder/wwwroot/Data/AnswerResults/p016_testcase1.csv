@@ -1,0 +1,5 @@
+CategoryName,NumberOfDishes,AveragePrice,MinPrice,MaxPrice,SpicyDishes,VegetarianDishes
+Japanese,2,80000,75000,85000,0,0
+Chinese,2,67500,55000,80000,0,0
+Korean,2,52500,35000,70000,2,1
+Vietnamese,2,55000,45000,65000,0,0 

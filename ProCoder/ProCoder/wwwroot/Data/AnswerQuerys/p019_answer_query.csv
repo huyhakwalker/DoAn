@@ -1,0 +1,15 @@
+SELECT 
+    c.CustomerName,
+    c.Phone,
+    COUNT(t.TransactionID) as TransactionCount,
+    FORMAT(SUM(t.Amount), 'N2') as TotalAmount,
+    FORMAT(AVG(t.Amount), 'N2') as AverageAmount,
+    STRING_AGG(DISTINCT at.AccountType, ', ') as AccountTypes,
+    FORMAT(SUM(CASE WHEN t.Amount > 0 THEN t.Amount ELSE 0 END), 'N2') as TotalDeposits,
+    FORMAT(ABS(SUM(CASE WHEN t.Amount < 0 THEN t.Amount ELSE 0 END)), 'N2') as TotalWithdrawals
+FROM Customers c
+JOIN Accounts a ON c.CustomerID = a.CustomerID
+JOIN AccountTypes at ON a.AccountTypeID = at.AccountTypeID
+LEFT JOIN Transactions t ON a.AccountID = t.AccountID
+GROUP BY c.CustomerName, c.Phone
+ORDER BY TotalAmount DESC; 

@@ -1,0 +1,15 @@
+INSERT INTO Categories (CategoryID, CategoryName, Description) VALUES
+(1, 'Vietnamese', 'Traditional Vietnamese cuisine'),
+(2, 'Japanese', 'Japanese cuisine'),
+(3, 'Korean', 'Korean cuisine'),
+(4, 'Chinese', 'Chinese cuisine');
+
+INSERT INTO Dishes (DishID, DishName, CategoryID, Price, Description, IsSpicy, IsVegetarian) VALUES
+(1, 'Pho Bo', 1, 65000, 'Traditional beef noodle soup', 0, 0),
+(2, 'Salmon Sushi', 2, 85000, 'Fresh salmon sushi', 0, 0),
+(3, 'Kimchi', 3, 35000, 'Fermented cabbage', 1, 1),
+(4, 'Dimsum', 4, 55000, 'Seafood dimsum', 0, 0),
+(5, 'Bun Cha', 1, 45000, 'Hanoi grilled pork with noodles', 0, 0),
+(6, 'Ramen', 2, 75000, 'Pork ramen', 0, 0),
+(7, 'Bibimbap', 3, 70000, 'Korean mixed rice bowl', 1, 0),
+(8, 'Seafood Noodles', 4, 80000, 'Stir-fried seafood noodles', 0, 0); 

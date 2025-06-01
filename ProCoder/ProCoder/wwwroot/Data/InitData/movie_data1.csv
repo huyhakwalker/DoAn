@@ -1,0 +1,15 @@
+INSERT INTO Movies (MovieID, Title, ReleaseDate, Duration, Genre, Director, Rating) VALUES
+(1, 'Life of Pi', '2024-01-15', 120, 'Adventure', 'Steven Spielberg', 8.5),
+(2, 'Love and Destiny', '2024-01-20', 105, 'Romance', 'Nancy Meyers', 7.8),
+(3, 'Superhero: Apocalypse', '2024-01-25', 150, 'Action', 'Christopher Nolan', 9.0),
+(4, 'Secrets of Yesterday', '2024-01-30', 95, 'Thriller', 'David Fincher', 8.2);
+
+INSERT INTO Screenings (ScreeningID, MovieID, TheaterNumber, ScreeningTime, Price, AvailableSeats) VALUES
+(1, 1, 1, '2024-02-15 10:00:00', 90000, 100),
+(2, 1, 1, '2024-02-15 13:00:00', 90000, 80),
+(3, 2, 2, '2024-02-15 11:00:00', 85000, 120),
+(4, 2, 2, '2024-02-15 14:00:00', 85000, 90),
+(5, 3, 3, '2024-02-15 12:00:00', 100000, 150),
+(6, 3, 3, '2024-02-15 15:00:00', 100000, 130),
+(7, 4, 4, '2024-02-15 13:30:00', 95000, 110),
+(8, 4, 4, '2024-02-15 16:30:00', 95000, 100); 

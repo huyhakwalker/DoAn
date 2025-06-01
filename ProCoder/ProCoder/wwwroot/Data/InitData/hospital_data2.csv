@@ -1,0 +1,19 @@
+
+INSERT INTO Departments (DepartmentID, DepartmentName, Floor, HeadDoctor) VALUES
+(1, 'Oncology', 5, 'Dr. Richard Miller'),
+(2, 'Gastroenterology', 3, 'Dr. Linda Wilson'),
+(3, 'Dermatology', 2, 'Dr. Thomas Anderson'),
+(4, 'ENT', 4, 'Dr. Maria Rodriguez'),
+(5, 'Psychiatry', 1, 'Dr. James Thompson');
+
+INSERT INTO Patients (PatientID, FirstName, LastName, DepartmentID, AdmissionDate, DischargeDate, Diagnosis, RoomNumber) VALUES
+(1, 'Michael', 'Brown', 1, '2024-02-01', NULL, 'Lung Cancer', '501'),
+(2, 'Susan', 'Davis', 1, '2024-02-02', '2024-02-15', 'Breast Cancer', '502'),
+(3, 'Joseph', 'Miller', 2, '2024-02-03', NULL, 'Ulcerative Colitis', '301'),
+(4, 'Margaret', 'Wilson', 2, '2024-02-04', '2024-02-10', 'Gastritis', '302'),
+(5, 'Charles', 'Anderson', 3, '2024-02-05', '2024-02-07', 'Severe Eczema', '201'),
+(6, 'Barbara', 'Taylor', 3, '2024-02-06', NULL, 'Psoriasis', '202'),
+(7, 'Christopher', 'Thomas', 4, '2024-02-07', '2024-02-12', 'Chronic Sinusitis', '401'),
+(8, 'Jessica', 'Martinez', 4, '2024-02-08', NULL, 'Tonsillitis', '402'),
+(9, 'Daniel', 'Garcia', 5, '2024-02-09', NULL, 'Major Depression', '101'),
+(10, 'Sarah', 'Lopez', 5, '2024-02-10', '2024-02-20', 'Anxiety Disorder', '102'); 

@@ -1,0 +1,4 @@
+TypeName,BasePrice,Capacity,TotalRooms,BookedRooms,OccupancyRate,CurrentRevenue
+Single Suite,2000000,1,3,1,33.33,2000000
+Single Deluxe,1200000,1,3,1,33.33,1200000
+Single Standard,800000,1,3,1,33.33,800000 

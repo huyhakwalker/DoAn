@@ -1,0 +1,18 @@
+INSERT INTO Departments (DepartmentID, DepartmentName, Location, HeadProfessor) VALUES
+(1, 'Department of Mechanical Engineering', 'Building E', 'Prof. Hoang Van E'),
+(2, 'Department of Construction', 'Building F', 'Prof. Dang Thi F'),
+(3, 'Department of Medicine', 'Building G', 'Prof. Bui Van G'),
+(4, 'Department of Law', 'Building H', 'Prof. Mai Thi H'),
+(5, 'Department of Environment', 'Building I', 'Prof. Duong Van I');
+
+INSERT INTO Students (StudentID, FirstName, LastName, DepartmentID, EnrollmentDate, DateOfBirth, GPA) VALUES
+(1, 'Bui', 'Van Long', 1, '2020-09-01', '2002-02-14', 3.85),
+(2, 'Mai', 'Thi Huong', 1, '2020-09-01', '2002-05-22', 3.95),
+(3, 'Duong', 'Van Thanh', 2, '2020-09-01', '2002-08-17', 3.70),
+(4, 'Ly', 'Thi Nga', 2, '2020-09-01', '2002-11-30', 3.60),
+(5, 'Dang', 'Van Phu', 3, '2020-09-01', '2002-03-25', 3.90),
+(6, 'Ho', 'Thi Trang', 3, '2020-09-01', '2002-07-08', 3.80),
+(7, 'Phan', 'Van Quang', 4, '2020-09-01', '2002-09-19', 3.75),
+(8, 'Truong', 'Thi Xuan', 4, '2020-09-01', '2002-12-03', 3.65),
+(9, 'Huynh', 'Van Son', 5, '2020-09-01', '2002-04-16', 3.55),
+(10, 'Vo', 'Thi Yen', 5, '2020-09-01', '2002-10-28', 3.45); 

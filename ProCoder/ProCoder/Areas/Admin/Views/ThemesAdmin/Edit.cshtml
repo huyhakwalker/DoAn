@@ -1,0 +1,44 @@
+@model ProCoder.Models.Theme
+@{
+    ViewData["Title"] = "Chỉnh sửa dạng bài";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            <form action="@Url.Action("Edit", "ThemesAdmin", new { area = "Admin", id = Model.ThemeId })" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="ThemeId" value="@Model.ThemeId" />
+
+                <div class="form-group mb-3">
+                    <label for="ThemeName" class="form-label">Tên dạng bài</label>
+                    <input type="text" class="form-control" id="ThemeName" name="ThemeName"
+                           value="@Model.ThemeName" required />
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.ThemeName)</span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="ThemeOrder" class="form-label">Thứ tự hiển thị</label>
+                    <input type="number" class="form-control" id="ThemeOrder" name="ThemeOrder"
+                           value="@Model.ThemeOrder" required />
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.ThemeOrder)</span>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-save"></i> Lưu thay đổi
+                    </button>
+                    <a href="@Url.Action("Index", "ThemesAdmin", new { area = "Admin" })" class="btn btn-secondary btn-lg ms-2">
+                        <i class="fas fa-arrow-left"></i> Quay lại
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

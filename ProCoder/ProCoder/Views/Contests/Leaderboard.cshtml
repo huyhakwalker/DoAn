@@ -1,0 +1,338 @@
+@{
+    ViewData["Title"] = "Bảng xếp hạng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    var contest = ViewBag.Contest as ProCoder.Models.Contest;
+    var leaderboardData = ViewBag.LeaderboardData as List<dynamic>;
+    var contestProblems = ViewBag.ContestProblems as List<ProCoder.Models.HasProblem>;
+}
+
+<style>
+    .leaderboard-header {
+        background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+    }
+    
+    .leaderboard-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    
+    .leaderboard-subtitle {
+        font-size: 16px;
+        opacity: 0.8;
+    }
+    
+    .leaderboard-info {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        gap: 20px;
+    }
+    
+    .leaderboard-info-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .leaderboard-info-item i {
+        margin-right: 10px;
+        opacity: 0.8;
+    }
+    
+    .leaderboard-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        font-size: 14px;
+    }
+    
+    .leaderboard-table th, .leaderboard-table td {
+        padding: 12px 10px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .leaderboard-table th {
+        background-color: #f0f2f5;
+        color: #333;
+        font-weight: 600;
+        border-bottom: 2px solid #dee2e6;
+        white-space: nowrap;
+    }
+    
+    .leaderboard-table td {
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .leaderboard-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .leaderboard-table tr:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .rank-1 {
+        background-color: rgba(255, 215, 0, 0.2) !important;
+        font-weight: bold;
+    }
+    
+    .rank-2 {
+        background-color: rgba(192, 192, 192, 0.2) !important;
+        font-weight: bold;
+    }
+    
+    .rank-3 {
+        background-color: rgba(205, 127, 50, 0.2) !important;
+        font-weight: bold;
+    }
+    
+    .problem-solved {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: #155724;
+        border-radius: 4px;
+        padding: 5px;
+    }
+    
+    .problem-attempted {
+        background-color: rgba(255, 193, 7, 0.2);
+        color: #856404;
+        border-radius: 4px;
+        padding: 5px;
+    }
+    
+    .problem-cell {
+        width: 70px;
+        height: 60px;
+        position: relative;
+    }
+    
+    .points {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .time {
+        font-size: 12px;
+        display: block;
+        margin-top: 3px;
+        color: #6c757d;
+    }
+    
+    .attempts {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 10px;
+        color: #6c757d;
+    }
+    
+    .first-place {
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFD700;
+    }
+    
+    .second-place {
+        font-size: 18px;
+        font-weight: bold;
+        color: #C0C0C0;
+    }
+    
+    .third-place {
+        font-size: 16px;
+        font-weight: bold;
+        color: #CD7F32;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    .rank-cell {
+        width: 60px;
+    }
+    
+    .name-cell {
+        text-align: left !important;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .score-cell {
+        width: 80px;
+        font-weight: bold;
+    }
+    
+    .time-cell {
+        width: 100px;
+    }
+    
+    .solved-cell {
+        width: 100px;
+    }
+    
+    .problem-solved .time {
+        font-size: 11px;
+        color: #666;
+        display: none;
+    }
+    
+    .problem-solved .problem-points {
+        margin-bottom: 0;
+    }
+</style>
+
+<div class="container">
+    <div class="leaderboard-header">
+        <div class="leaderboard-title">
+            <i class="fas fa-trophy me-2"></i>Bảng xếp hạng: @contest.ContestName
+        </div>
+        <div class="leaderboard-subtitle">
+            Kết quả cuộc thi và thành tích của người tham gia
+        </div>
+        
+        <div class="leaderboard-info">
+            <div class="leaderboard-info-item">
+                <i class="fas fa-calendar"></i>
+                <span>@contest.StartTime.ToString("dd/MM/yyyy HH:mm") - @contest.EndTime.ToString("dd/MM/yyyy HH:mm")</span>
+            </div>
+            <div class="leaderboard-info-item">
+                <i class="fas fa-clock"></i>
+                <span>@contest.Duration phút</span>
+            </div>
+            <div class="leaderboard-info-item">
+                <i class="fas fa-users"></i>
+                <span>@leaderboardData.Count người tham gia</span>
+            </div>
+            <div class="leaderboard-info-item">
+                <i class="fas fa-code"></i>
+                <span>@contestProblems.Count bài tập</span>
+            </div>
+        </div>
+    </div>
+    
+    @if (leaderboardData.Count > 0)
+    {
+        <div class="table-responsive">
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th class="rank-cell">Hạng</th>
+                        <th class="name-cell">Thí sinh</th>
+                        <th class="score-cell">Điểm</th>
+                        <th class="time-cell">Thời gian</th>
+                        <th class="solved-cell">Bài giải được</th>
+                        @foreach (var problem in contestProblems.OrderBy(p => p.Problem.ProblemCode))
+                        {
+                            <th class="problem-cell">@problem.Problem.ProblemCode</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < leaderboardData.Count; i++)
+                    {
+                        var entry = leaderboardData[i];
+                        var rank = i + 1;
+                        
+                        <tr class="@(rank <= 3 ? $"rank-{rank}" : "")">
+                            <td class="rank-cell">
+                                @if (rank == 1)
+                                {
+                                    <span class="first-place"><i class="fas fa-trophy"></i> @rank</span>
+                                }
+                                else if (rank == 2)
+                                {
+                                    <span class="second-place"><i class="fas fa-medal"></i> @rank</span>
+                                }
+                                else if (rank == 3)
+                                {
+                                    <span class="third-place"><i class="fas fa-medal"></i> @rank</span>
+                                }
+                                else
+                                {
+                                    <span>@rank</span>
+                                }
+                            </td>
+                            <td class="name-cell">@entry.CoderName</td>
+                            <td class="score-cell">@entry.TotalPoints</td>
+                            <td class="time-cell">@entry.TotalTime phút</td>
+                            <td class="solved-cell">@entry.ProblemsSolved / @contestProblems.Count</td>
+                            
+                            @foreach (var problem in contestProblems.OrderBy(p => p.Problem.ProblemCode))
+                            {
+                                var problemDetails = entry.ProblemDetails as IEnumerable<dynamic>;
+                                var problemDetail = problemDetails.FirstOrDefault(pd => pd.ProblemId == problem.ProblemId);
+                                
+                                @if (problemDetail != null)
+                                {
+                                    bool solved = problemDetail.Solved;
+                                    double points = problemDetail.PointWon;
+                                    int attempts = problemDetail.Attempts;
+                                    DateTime? timeSolved = problemDetail.TimeSolved;
+                                    
+                                    <td class="problem-cell @(solved ? "problem-solved" : (attempts > 0 ? "problem-attempted" : ""))">
+                                        <div class="problem-info">
+                                            @if (solved)
+                                            {
+                                                <div class="problem-points">@points</div>
+                                                @if (timeSolved.HasValue)
+                                                {
+                                                    int minutes = Math.Min((int)(timeSolved.Value - contest.StartTime).TotalMinutes, contest.Duration);
+                                                    if (minutes >= 0)
+                                                    {
+                                                        <div class="time">@minutes&nbsp;m</div>
+                                                    }
+                                                }
+                                            }
+                                            else if (attempts > 0)
+                                            {
+                                                <div>-</div>
+                                            }
+                                            else
+                                            {
+                                                <div>-</div>
+                                            }
+                                            
+                                            @if (attempts > 0)
+                                            {
+                                                <div class="attempts">@attempts lần</div>
+                                            }
+                                        </div>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>-</td>
+                                }
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>
+            Chưa có người tham gia cuộc thi này.
+        </div>
+    }
+    
+    <div class="mt-4">
+        <a href="@Url.Action("Details", new { id = contest.ContestId })" class="btn btn-outline-primary">
+            <i class="fas fa-arrow-left me-2"></i>Quay lại chi tiết cuộc thi
+        </a>
+    </div>
+</div> 

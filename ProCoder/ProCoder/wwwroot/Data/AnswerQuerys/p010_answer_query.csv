@@ -1,0 +1,1 @@
+SELECT DepartmentName, COUNT(*) as StudentCount FROM Students GROUP BY DepartmentName ORDER BY StudentCount DESC; 

@@ -1,0 +1,303 @@
+@using ProCoder.Models.ViewModels
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="container mt-4">
+    <!-- Banner Section -->
+    <div class="banner-section mb-5">
+        <div class="card bg-primary text-white shadow-lg">
+            <div class="card-body p-5">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-4 fw-bold">ProCoder</h1>
+                        <h2 class="h3 mb-4">Master Your SQL Skills</h2>
+                        <p class="lead">Hệ thống chấm bài tập SQL trực tuyến</p>
+                        <hr class="my-4 bg-white">
+                        <p class="fs-5">Nơi luyện tập và nâng cao kỹ năng SQL của bạn</p>
+                        <a class="btn btn-light btn-lg" href="@Url.Action("Index", "Problems")">Bắt đầu ngay</a>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="database-illustration">
+                            <img src="/images/database-icon.png" alt="Database Icon" class="img-fluid animate-float" style="max-width: 250px;">
+                            <div class="database-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Row -->
+    <div class="row mb-4">
+        <!-- Left Column -->
+        <div class="col-md-8">
+            <!-- Blogs Section -->
+            <div class="card shadow-lg border-0 rounded-lg">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-newspaper text-primary me-2"></i> Bài viết mới
+                    </h3>
+                    <div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="@Url.Action("Create", "Blogs")" class="btn btn-primary me-2">
+                                <i class="fas fa-plus-circle"></i> Đăng bài viết
+                            </a>
+                        }
+                        <a href="@Url.Action("Index", "Blogs")" class="btn btn-outline-primary">
+                            <i class="fas fa-list"></i> Xem tất cả
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body blog-container p-0">
+                    <div class="list-group list-group-flush">
+                        @foreach (var blog in Model.PinnedBlogs)
+                        {
+                            <a href="@Url.Action("Details", "Blogs", new { id = blog.BlogId })" 
+                               class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">@blog.BlogTitle</h5>
+                                    <small class="text-muted">@blog.BlogDate.ToString("dd/MM/yyyy")</small>
+                                </div>
+                                <p class="mb-1">@blog.BlogContent.Substring(0, Math.Min(blog.BlogContent.Length, 100))...</p>
+                                <small class="text-muted">Đăng bởi: @blog.Coder.CoderName</small>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-4">
+            <!-- Top Coders Section -->
+            <div class="card shadow-lg border-0 rounded-lg mb-4">
+                <div class="card-header bg-white py-3">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-trophy text-warning me-2"></i> Coder tích cực
+                    </h3>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        @foreach (var coder in Model.TopCoders)
+                        {
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-circle me-3">
+                                        <img src="/images/avatar-default.png" class="rounded-circle" width="40" height="40">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">@coder.CoderName</h6>
+                                        <small class="text-muted">Thành viên tích cực</small>
+                                    </div>
+                                </div>
+                                <span class="badge bg-primary rounded-pill">@coder.SubmissionCount bài</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Problems Section -->
+            <div class="card shadow-lg border-0 rounded-lg">
+                <div class="card-header bg-white py-3">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-code text-info me-2"></i> Bài tập mới
+                    </h3>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        @if (!Model.RecentProblems.Any())
+                        {
+                            <div class="list-group-item text-center text-muted">
+                                Chưa có bài tập nào
+                            </div>
+                        }
+                        else
+                        {
+                            foreach (var problem in Model.RecentProblems)
+                            {
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">@problem.ProblemName</h6>
+                                        <small class="text-muted">Schema: @problem.DatabaseSchema.SchemaName</small>
+                                    </div>
+                                    <a href="@Url.Action("Details", "Problems", new { id = problem.ProblemId })" 
+                                       class="btn btn-primary btn-sm rounded-pill">
+                                        <i class="fas fa-eye"></i> Xem
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border: none !important;
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-3px);
+    }
+
+    .card-header {
+        border-bottom: 1px solid rgba(0,0,0,.1) !important;
+        background: linear-gradient(to right, #ffffff, #f8f9fa) !important;
+    }
+
+    .blog-container {
+        height: 400px;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .blog-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .list-group-item {
+        padding: 1.25rem;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,.1) !important;
+        transition: all 0.2s ease;
+    }
+
+    .list-group-item:hover {
+        background-color: #f8f9fa;
+        transform: translateX(5px);
+    }
+
+    .list-group-item:last-child {
+        border-bottom: none !important;
+    }
+
+    .avatar-circle {
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .avatar-circle img {
+        object-fit: cover;
+    }
+
+    .badge {
+        font-size: 0.85rem;
+        padding: 0.5em 1em;
+        font-weight: 500;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #2d3748;
+    }
+
+    h5 {
+        color: #2d3748;
+        font-weight: 600;
+    }
+
+    .text-muted {
+        color: #6c757d !important;
+    }
+
+    .database-illustration {
+        position: relative;
+        padding: 20px;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @@keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .database-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+
+    .particle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        animation: particle-float 4s infinite;
+    }
+
+    .particle:nth-child(1) {
+        top: 20%;
+        left: 20%;
+        animation-delay: 0s;
+    }
+
+    .particle:nth-child(2) {
+        top: 50%;
+        right: 20%;
+        animation-delay: 1s;
+    }
+
+    .particle:nth-child(3) {
+        bottom: 20%;
+        left: 50%;
+        animation-delay: 2s;
+    }
+
+    @@keyframes particle-float {
+        0% {
+            transform: translate(0, 0);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(20px, -20px);
+            opacity: 0;
+        }
+    }
+</style>

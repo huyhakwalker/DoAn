@@ -1,0 +1,177 @@
+﻿@model IEnumerable<ProCoder.Models.Problem>
+
+@{
+    ViewData["Title"] = "Quản lý bài toán";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+
+    // Lấy thông tin phân trang từ ViewBag
+    int currentPage = ViewBag.CurrentPage;
+    int totalPages = ViewBag.TotalPages;
+    string searchString = ViewBag.SearchString;
+    int totalItems = ViewBag.TotalItems;
+    
+    int index = (currentPage - 1) * ViewBag.PageSize + 1; // STT bắt đầu từ trang hiện tại
+    
+    // Lấy số lượng test case cho mỗi bài toán
+    var testCaseCounts = ViewBag.TestCaseCounts as Dictionary<int, int> ?? new Dictionary<int, int>();
+}
+@if (TempData["SuccessMessageProblem"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        @TempData["SuccessMessageProblem"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["ErrorMessageProblem"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+        @TempData["ErrorMessageProblem"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<div class="container-fluid mt-2">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="@Url.Action("Create", "ProblemsAdmin", new { area = "Admin" })" class="btn btn-success">
+            <i class="fas fa-plus"></i> Thêm bài toán
+        </a>
+
+        <form method="get" action="" class="d-flex gap-2">
+            <div class="input-group" style="width: 300px;">
+                <input type="text" class="form-control" name="search"
+                       value="@searchString"
+                       placeholder="Tìm theo tên hoặc người tạo...">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+                @if (!string.IsNullOrEmpty(searchString))
+                {
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">
+                        <i class="fas fa-times"></i>
+                    </a>
+                }
+            </div>
+        </form>
+    </div>
+
+    <!-- Hiển thị kết quả tìm kiếm nếu có -->
+    @if (!string.IsNullOrEmpty(searchString))
+    {
+        <div class="alert alert-info">
+            Kết quả tìm kiếm cho: <strong>@searchString</strong>
+            <span class="ms-2">(@totalItems kết quả)</span>
+        </div>
+    }
+
+    <div class="table-responsive zoom-table">
+        <table class="table table-hover table-bordered align-middle zoom-table">
+            <thead class="bg-gradient-primary text-white">
+                <tr>
+                    <th scope="col" class="text-center">STT</th>
+                    <th scope="col">Mã bài toán</th>
+                    <th scope="col">Tên bài toán</th>
+                    <th scope="col">Người tạo bài tập</th>
+                    <th scope="col" class="text-center">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="text-center">Không có dữ liệu.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var problem in Model)
+                    {
+                        <tr class="@(index % 2 == 0 ? "table-light" : "table-secondary")">
+                            <td class="text-center">@index</td>
+                            <td class="text-start">@problem.ProblemCode</td>
+                            <td class="text-start">@problem.ProblemName</td>
+                            <td class="text-start">@problem.Coder.CoderName</td>
+                            <td class="text-center">
+                                <form action="@Url.Action("Edit", "ProblemsAdmin", new { area = "Admin", id = problem.ProblemId })" method="get" style="display: inline;">
+                                    <button type="submit" class="btn btn-sm btn-primary me-1 font-lg">
+                                        <i class="fas fa-edit"></i> Chỉnh sửa
+                                    </button>
+                                </form>
+                                <form action="@Url.Action("Details", "ProblemsAdmin", new { area = "Admin", id = problem.ProblemId })" method="get" style="display: inline;">
+                                    <button type="submit" class="btn btn-sm btn-info me-1 font-lg">
+                                        <i class="fas fa-info-circle"></i> Chi tiết
+                                    </button>
+                                </form>
+                                <form action="@Url.Action("Delete", "ProblemsAdmin", new { area = "Admin", id = problem.ProblemId })" method="post" style="display: inline;">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-danger font-lg"
+                                            onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">
+                                        <i class="fas fa-trash-alt"></i> Xóa
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Thêm phân trang -->
+    @if (totalPages > 1)
+    {
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                @if (currentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1, search = searchString })">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= totalPages; i++)
+                {
+                    <li class="page-item @(i == currentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { page = i, search = searchString })">@i</a>
+                    </li>
+                }
+
+                @if (currentPage < totalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1, search = searchString })">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>
+
+<style>
+    .pagination {
+        margin-top: 20px;
+    }
+
+    .page-link {
+        color: #007bff;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+    }
+
+    .page-link:hover {
+        color: #0056b3;
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+    }
+</style>

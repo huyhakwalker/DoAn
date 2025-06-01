@@ -1,0 +1,9 @@
+SELECT TOP 1
+    m.Title,
+    m.Genre,
+    COUNT(t.TicketID) as TicketCount
+FROM Movies m
+JOIN Screenings s ON m.MovieID = s.MovieID
+JOIN Tickets t ON s.ScreeningID = t.ScreeningID
+GROUP BY m.Title, m.Genre
+ORDER BY TicketCount DESC; 

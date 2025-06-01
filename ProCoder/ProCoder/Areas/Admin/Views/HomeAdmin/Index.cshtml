@@ -1,0 +1,238 @@
+@model ProCoder.Models.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Thống kê hệ thống";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Dashboard Header -->
+<div class="container-fluid px-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-chart-line me-2"></i>Báo cáo thống kê hệ thống</h1>
+    </div>
+
+    <!-- Tổng số liệu với số đếm -->
+    <div class="row">
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Tổng người dùng</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="@Model.TotalUsers">@Model.TotalUsers</div>
+                            <div class="small text-muted mt-2">Đã đăng ký</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Tổng bài tập</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="@Model.TotalProblems">@Model.TotalProblems</div>
+                            <div class="small text-muted mt-2">Đã tạo</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-code fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Bài nộp tháng này
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 counter" data-target="@Model.MonthlySubmissions">@Model.MonthlySubmissions</div>
+                                    <div class="small text-muted mt-2">Tháng @DateTime.Now.Month/@DateTime.Now.Year</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biểu đồ phân phối vai trò -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Phân bố người dùng theo vai trò</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="chart-pie mb-4">
+                                <canvas id="roleChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            @if (Model.RoleDistribution.Any())
+                            {
+                                <div class="progress-container">
+                                    @foreach (var role in Model.RoleDistribution)
+                                    {
+                                        double percentage = Math.Round((double)role.Count / Model.TotalUsers * 100, 1);
+                                        string colorClass = role.Role == "Admin" ? "danger" : 
+                                                    role.Role == "Contest Setter" ? "warning" : "info";
+                                        <div class="mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h4 class="small font-weight-bold">@role.Role <span class="float-right">@percentage%</span></h4>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-@colorClass" role="progressbar" style="width: @percentage%" 
+                                                    aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="text-xs mt-1">
+                                                <strong>@role.Count</strong> người dùng
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Không có dữ liệu phân phối vai trò
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Styles cho các card */
+    .card {
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    
+    .border-left-primary {
+        border-left: 4px solid #4e73df;
+    }
+    
+    .border-left-success {
+        border-left: 4px solid #1cc88a;
+    }
+    
+    .border-left-info {
+        border-left: 4px solid #36b9cc;
+    }
+    
+    /* Chart styles */
+    .chart-pie {
+        height: 300px;
+        position: relative;
+    }
+    
+    /* Progress bar styles */
+    .progress {
+        height: 1.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.25rem;
+    }
+</style>
+
+@section Scripts {
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Dữ liệu từ model
+            const totalUsers = @Model.TotalUsers;
+            const roleData = [@string.Join(",", Model.RoleDistribution.Select(r => r.Count))];
+            const roleLabels = [@Html.Raw(string.Join(",", Model.RoleDistribution.Select(r => $"'{r.Role}'")))];
+            
+            // Màu cho từng vai trò
+            const bgColors = [];
+            const hoverColors = [];
+            
+            roleLabels.forEach(label => {
+                if (label.includes('Admin')) {
+                    bgColors.push('#e74a3b');
+                    hoverColors.push('#be3c2d');
+                } else if (label.includes('Contest Setter')) {
+                    bgColors.push('#f6c23e');
+                    hoverColors.push('#daa520');
+                } else {
+                    bgColors.push('#36b9cc');
+                    hoverColors.push('#2c9faf');
+                }
+            });
+            
+            // Biểu đồ vai trò người dùng
+            new Chart(document.getElementById('roleChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: roleLabels,
+                    datasets: [{
+                        data: roleData,
+                        backgroundColor: bgColors,
+                        hoverBackgroundColor: hoverColors,
+                        hoverOffset: 4,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 14
+                                },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.raw || 0;
+                                    const percentage = Math.round((value / totalUsers) * 100);
+                                    return `${label}: ${value} người dùng (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+}

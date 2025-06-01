@@ -1,0 +1,18 @@
+SELECT TOP 5
+    b.Title,
+    a.AuthorName,
+    b.PublicationYear,
+    COUNT(br.BorrowID) as BorrowCount,
+    AVG(CAST(r.Rating as FLOAT)) as AverageRating
+FROM Books b
+JOIN Authors a ON b.AuthorID = a.AuthorID
+LEFT JOIN BookBorrows br ON b.BookID = br.BookID
+LEFT JOIN Reviews r ON b.BookID = r.BookID
+GROUP BY b.Title, a.AuthorName, b.PublicationYear
+HAVING COUNT(br.BorrowID) = (
+    SELECT TOP 1 COUNT(BorrowID)
+    FROM BookBorrows
+    GROUP BY BookID
+    ORDER BY COUNT(BorrowID) DESC
+)
+ORDER BY BorrowCount DESC, AverageRating DESC; 

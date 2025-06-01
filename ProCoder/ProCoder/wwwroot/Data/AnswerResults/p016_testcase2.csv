@@ -1,0 +1,6 @@
+CategoryName,NumberOfDishes,AveragePrice,MinPrice,MaxPrice,SpicyDishes,VegetarianDishes
+French,2,200000,180000,220000,0,1
+Italian,2,142500,135000,150000,0,1
+Mediterranean,2,125000,85000,165000,0,1
+Mexican,2,102500,95000,110000,2,0
+American,2,185000,120000,250000,0,0 

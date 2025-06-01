@@ -1,0 +1,13 @@
+INSERT INTO Authors (AuthorID, AuthorName)
+VALUES 
+    (1, 'Robert Martin'),
+    (2, 'Martin Fowler'),
+    (3, 'Kent Beck');
+
+INSERT INTO Books (BookID, Title, AuthorID, PublishYear)
+VALUES 
+    (1, 'Clean Code', 1, 2008),
+    (2, 'Refactoring', 2, 1999),
+    (3, 'Test-Driven Development', 3, 2003),
+    (4, 'Clean Architecture', 1, 2017),
+    (5, 'Patterns of Enterprise Application Architecture', 2, 2002); 

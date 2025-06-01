@@ -1,0 +1,4 @@
+ CustomerName,Phone,TransactionCount,TotalAmount,AverageAmount,AccountTypes,TotalDeposits,TotalWithdrawals
+Le Thi Huong,0945678901,12,850000000,70833333.33,Investment, Savings,900000000,50000000
+Hoang Van Minh,0923456789,10,720000000,72000000,Investment, Term Deposit,800000000,80000000
+Mai Thi Lan,0978901234,8,680000000,85000000,Investment, Checking,700000000,20000000

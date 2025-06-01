@@ -1,0 +1,190 @@
+@model IEnumerable<ProCoder.Models.Submission>
+
+@{
+    ViewData["Title"] = "Danh sách bài nộp";
+    bool isAdmin = ViewBag.IsAdmin != null && ViewBag.IsAdmin;
+    
+    // Lấy thông tin phân trang
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+}
+
+<div class="container mt-4">
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Danh sách bài nộp</h2>
+            @if (isAdmin)
+            {
+                <p class="text-muted">Xem danh sách các bài đã nộp của tất cả người dùng</p>
+                <span class="badge bg-danger">Admin Mode</span>
+            }
+            else
+            {
+                <p class="text-muted">Xem danh sách các bài bạn đã nộp</p>
+            }
+        </div>
+        
+        <div class="card-body">
+            <div class="mb-3">
+                <h5>
+                    <i class="bi bi-clock-history"></i>
+                    Lịch sử bài nộp
+                </h5>
+            </div>
+            
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover border">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Bài tập</th>
+                                @if (isAdmin)
+                                {
+                                    <th>Người nộp</th>
+                                }
+                                <th>Thời gian nộp</th>
+                                <th>Kết quả</th>
+                                <th>Thời gian chạy</th>
+                                <th class="text-center">Điểm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var submission in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <a asp-action="Details" asp-route-id="@submission.SubmissionId" title="Xem chi tiết" class="fw-bold text-decoration-none">
+                                            #@submission.SubmissionId
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a asp-controller="Problems" asp-action="Details" asp-route-id="@submission.ProblemId" class="text-decoration-none">
+                                            <i class="bi bi-file-code me-1"></i>@submission.Problem.ProblemName
+                                        </a>
+                                    </td>
+                                    @if (isAdmin)
+                                    {
+                                        <td>
+                                            @submission.Coder.CoderName
+                                        </td>
+                                    }
+                                    <td>
+                                        @submission.SubmitTime.ToString("dd/MM/yyyy HH:mm")
+                                    </td>
+                                    <td>
+                                        @if (submission.SubmissionStatus == "Accepted")
+                                        {
+                                            <span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Đúng</span>
+                                        }
+                                        else if (submission.SubmissionStatus == "Wrong Answer")
+                                        {
+                                            <span class="badge bg-danger"><i class="bi bi-x-circle me-1"></i>Sai</span>
+                                        }
+                                        else if (submission.SubmissionStatus == "Runtime Error")
+                                        {
+                                            <span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>Lỗi</span>
+                                        }
+                                        else if (submission.SubmissionStatus == "Time Limit Exceeded")
+                                        {
+                                            <span class="badge bg-secondary"><i class="bi bi-hourglass-split me-1"></i>Quá thời gian</span>
+                                        }
+                                        else if (submission.SubmissionStatus == "Pending")
+                                        {
+                                            <span class="badge bg-info"><i class="bi bi-arrow-repeat me-1"></i>Đang chạy</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger"><i class="bi bi-x-circle me-1"></i>@submission.SubmissionStatus</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (submission.ExecutionTime.HasValue)
+                                        {
+                                            <span class="text-muted">@submission.ExecutionTime ms</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">-</span>
+                                        }
+                                    </td>
+                                    <td class="text-center fw-bold">@submission.Score</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Phân trang -->
+                @if (totalPages > 1)
+                {
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            @if (currentPage > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1 })">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </a>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= totalPages; i++)
+                            {
+                                <li class="page-item @(i == currentPage ? "active" : "")">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                </li>
+                            }
+
+                            @if (currentPage < totalPages)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1 })">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                }
+            }
+            else
+            {
+                <div class="alert alert-info text-center">
+                    <i class="bi bi-journal-x"></i>
+                    <p>Chưa có lần nộp bài nào.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Đảm bảo Bootstrap Icons được load -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!-- CSS cho phân trang -->
+<style>
+    .pagination {
+        margin-top: 20px;
+    }
+
+    .page-link {
+        color: #007bff;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+    }
+
+    .page-link:hover {
+        color: #0056b3;
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+    }
+</style>

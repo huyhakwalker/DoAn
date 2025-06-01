@@ -1,0 +1,18 @@
+CREATE TABLE Classes (
+    ClassID int NOT NULL PRIMARY KEY,
+    ClassName nvarchar(50) NOT NULL,
+    Grade int NOT NULL,
+    TeacherName nvarchar(100),
+    RoomNumber nvarchar(20)
+);
+
+CREATE TABLE Students (
+    StudentID int NOT NULL PRIMARY KEY,
+    FirstName nvarchar(50) NOT NULL,
+    LastName nvarchar(50) NOT NULL,
+    ClassID int,
+    DateOfBirth date,
+    Gender nvarchar(10),
+    Address nvarchar(200),
+    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID)
+); 

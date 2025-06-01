@@ -1,0 +1,92 @@
+@model IEnumerable<ProCoder.Models.Favourite>
+@{
+    ViewData["Title"] = "Bài tập yêu thích";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h3>Danh sách bài tập yêu thích</h3>
+            <p class="mb-0">Tổng số bài: @(Model?.Count() ?? 0)</p>
+        </div>
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm bài tập...">
+                            <button class="btn btn-outline-secondary" type="button" id="searchButton">
+                                <i class="fa fa-search"></i> Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="problemsTable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Mã bài</th>
+                                <th>Tên bài</th>
+                                <th>Chủ đề</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var favourite in Model)
+                            {
+                                <tr>
+                                    <td>@favourite.Problem.ProblemCode</td>
+                                    <td>@favourite.Problem.ProblemName</td>
+                                    <td>@favourite.Problem.Theme?.ThemeName</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="@Url.Action("Details", "Problems", new { id = favourite.ProblemId })" class="btn btn-sm btn-primary">
+                                                Chi tiết
+                                            </a>
+                                            <form asp-action="Delete" asp-route-coderId="@favourite.CoderId" asp-route-problemId="@favourite.ProblemId" 
+                                                  method="post" onsubmit="return confirm('Bạn có chắc chắn muốn bỏ yêu thích bài tập này?');">
+                                                @Html.AntiForgeryToken()
+                                                <button type="submit" class="btn btn-sm btn-danger ms-2">
+                                                    <i class="bi bi-star"></i> Bỏ yêu thích
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info">
+                    <h4 class="alert-heading">Chưa có bài tập yêu thích!</h4>
+                    <p>Bạn chưa thêm bài tập nào vào danh sách yêu thích. Hãy vào danh sách bài tập và đánh dấu các bài bạn thích.</p>
+                    <hr>
+                    <p class="mb-0">
+                        <a href="@Url.Action("Index", "Problems")" class="btn btn-primary">
+                            Đi đến danh sách bài tập
+                        </a>
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Tìm kiếm
+            $("#searchInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#problemsTable tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+} 

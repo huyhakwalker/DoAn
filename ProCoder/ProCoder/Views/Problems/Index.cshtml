@@ -1,0 +1,334 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<ProCoder.Models.Problem>
+@using System.Web;
+@using Microsoft.EntityFrameworkCore;
+@{
+    ViewData["Title"] = "Danh sách bài tập";
+    
+    // Kiểm tra trạng thái đăng nhập và lấy thông tin người dùng
+    bool isAuthenticated = User.Identity.IsAuthenticated;
+    var username = User.Identity?.Name;
+    var favouriteProblemIds = new List<int>();
+    
+    if (isAuthenticated && !string.IsNullOrEmpty(username))
+    {
+        var context = new SqlExerciseScoringContext();
+        var coder = await context.Coders
+            .FirstOrDefaultAsync(c => c.CoderName == username);
+            
+        if (coder != null)
+        {
+            // Lấy danh sách ID bài tập yêu thích từ database
+            favouriteProblemIds = await context.Favourites
+                .Where(f => f.CoderId == coder.CoderId)
+                .Select(f => f.ProblemId)
+                .ToListAsync();
+        }
+    }
+}
+
+<style>
+    .page-header {
+        background: linear-gradient(135deg, #0061f2 0%, #6900f2 100%);
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/images/pattern.svg') center/cover;
+        opacity: 0.1;
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .search-box {
+        background: white;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        margin-top: -4rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        position: relative;
+        z-index: 2;
+    }
+
+    .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .problem-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        border: 1px solid #edf2f9;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border-color: #0061f2;
+    }
+
+    .problem-code {
+        font-family: 'JetBrains Mono', monospace;
+        color: #0061f2;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .problem-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1e2022;
+        margin-bottom: 1rem;
+    }
+
+    .theme-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .theme-badge {
+        background: #e7f0ff;
+        color: #0061f2;
+        padding: 0.4rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .problem-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #77838f;
+        font-size: 0.9rem;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .search-input {
+        border: 2px solid #edf2f9;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        transition: all 0.2s;
+    }
+
+    .search-input:focus {
+        border-color: #0061f2;
+        box-shadow: 0 0 0 4px rgba(0,97,242,0.1);
+    }
+
+    .filter-select {
+        border: 2px solid #edf2f9;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        background-color: white;
+    }
+
+    .database-badge {
+        background: #f0f7ff;
+        color: #0061f2;
+        padding: 0.3rem 0.8rem;
+        border-radius: 2rem;
+        font-size: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-top: 0.5rem;
+    }
+
+    .favourite-star {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.2s;
+        color: #d1d5db;
+    }
+
+    .favourite-star:hover {
+        transform: scale(1.2);
+    }
+
+    .favourite-star.active {
+        color: #fbbf24;
+    }
+</style>
+
+<div class="container-fluid">
+    @Html.AntiForgeryToken()
+    <div class="page-header text-center text-white">
+        <div class="header-content">
+            <h1 class="display-4 mb-3">Danh sách bài tập SQL</h1>
+            <p class="lead mb-0">Thực hành và nâng cao kỹ năng SQL của bạn với các bài tập đa dạng</p>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <div class="row g-4">
+            <div class="col-md-8">
+                <input type="text" id="searchInput" class="form-control search-input" 
+                       placeholder="Tìm kiếm bài tập theo tên hoặc mã..." />
+            </div>
+            <div class="col-md-4">
+                <select class="form-select filter-select" id="filterTheme">
+                    <option value="">Tất cả chủ đề</option>
+                    @foreach (var theme in Model.Select(p => p.Theme).Distinct())
+                    {
+                        <option value="@theme.ThemeName">@theme.ThemeName</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-grid">
+        @foreach (var problem in Model)
+        {
+            <div class="problem-card">
+                @if (isAuthenticated)
+                {
+                    <i class="bi @(favouriteProblemIds.Contains(problem.ProblemId) ? "bi-star-fill active" : "bi-star") favourite-star" 
+                       data-problem-id="@problem.ProblemId"></i>
+                }
+                <div class="problem-content" onclick="location.href='@Url.Action("Details", new { id = problem.ProblemId })'">
+                    <div class="problem-code">@problem.ProblemCode</div>
+                    <h3 class="problem-title">@problem.ProblemName</h3>
+                    <div class="theme-badges">
+                        <span class="theme-badge">@problem.Theme.ThemeName</span>
+                        @if (problem.DatabaseSchema != null)
+                        {
+                            <span class="database-badge">
+                                <i class="bi bi-database"></i>
+                                @problem.DatabaseSchema.SchemaName
+                            </span>
+                        }
+                    </div>
+                    <div class="problem-meta">
+                        <div class="meta-item">
+                            <i class="bi bi-person-circle"></i>
+                            <span>@problem.Coder.CoderName</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-file-earmark-text"></i>
+                            <span>@(problem.Submissions?.Count() ?? 0) lượt nộp</span>
+                        </div>
+                        @if (problem.TestCases != null && problem.TestCases.Any())
+                        {
+                            <div class="meta-item">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>@problem.TestCases.Count() test cases</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Tìm kiếm bài tập
+            $("#searchInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $(".problem-card").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            // Lọc theo chủ đề
+            $("#filterTheme").on("change", function () {
+                var value = $(this).val().toLowerCase();
+                if (value === "") {
+                    $(".problem-card").show();
+                } else {
+                    $(".problem-card").each(function () {
+                        var hasTheme = false;
+                        $(this).find(".theme-badge").each(function () {
+                            if ($(this).text().toLowerCase() === value) {
+                                hasTheme = true;
+                                return false;
+                            }
+                        });
+                        $(this).toggle(hasTheme);
+                    });
+                }
+            });
+
+            // Chỉ xử lý yêu thích nếu đã đăng nhập
+            @if (isAuthenticated)
+            {
+                <text>
+                // Xử lý sự kiện click vào sao
+                $(".favourite-star").on("click", function(e) {
+                    e.preventDefault(); // Ngăn không cho sự kiện lan ra thẻ cha
+                    e.stopPropagation(); // Ngăn không cho sự kiện lan ra thẻ cha
+                    const problemId = $(this).data("problem-id");
+                    const starElement = $(this);
+
+                    // Gửi yêu cầu AJAX để toggle trạng thái yêu thích
+                    $.ajax({
+                        url: "@Url.Action("ToggleFavourite", "Favourites")",
+                        type: "POST",
+                        data: { problemId: problemId },
+                        headers: {
+                            "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val()
+                        },
+                        dataType: "json",
+                        success: function(response) {
+                            if (response && response.success === true) {
+                                // Cập nhật giao diện
+                                if (response.isFavourited) {
+                                    starElement.addClass("active");
+                                    starElement.removeClass("bi-star");
+                                    starElement.addClass("bi-star-fill");
+                                } else {
+                                    starElement.removeClass("active");
+                                    starElement.removeClass("bi-star-fill");
+                                    starElement.addClass("bi-star");
+                                }
+                            }
+                        }
+                    });
+                    
+                    return false; // Ngăn chặn hành vi mặc định
+                });
+                </text>
+            }
+        });
+    </script>
+}
+

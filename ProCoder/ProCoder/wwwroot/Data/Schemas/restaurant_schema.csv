@@ -1,0 +1,16 @@
+CREATE TABLE Categories (
+    CategoryID int NOT NULL PRIMARY KEY,
+    CategoryName nvarchar(50) NOT NULL,
+    Description nvarchar(200)
+);
+
+CREATE TABLE Dishes (
+    DishID int NOT NULL PRIMARY KEY,
+    DishName nvarchar(100) NOT NULL,
+    CategoryID int,
+    Price int NOT NULL,
+    Description nvarchar(200),
+    IsSpicy bit,
+    IsVegetarian bit,
+    FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+); 

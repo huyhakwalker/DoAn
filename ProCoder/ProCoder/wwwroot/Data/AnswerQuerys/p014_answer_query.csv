@@ -1,0 +1,7 @@
+SELECT TOP 1
+    c.ClassName,
+    COUNT(s.StudentID) as StudentCount
+FROM Classes c
+JOIN Students s ON c.ClassID = s.ClassID
+GROUP BY c.ClassName
+ORDER BY StudentCount DESC; 

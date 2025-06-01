@@ -1,0 +1,20 @@
+INSERT INTO RoomTypes (RoomTypeID, TypeName, Description, BasePrice, Capacity) VALUES
+(1, 'Double Standard', 'Standard double room with 1 double bed', 1200000, 2),
+(2, 'Double Deluxe', 'Deluxe double room with 1 large double bed', 1800000, 2),
+(3, 'Family Standard', 'Family room with 2 double beds', 2000000, 4),
+(4, 'Family Suite', 'Luxury family suite with 2 bedrooms', 3500000, 4),
+(5, 'Presidential Suite', 'Presidential suite with 3 bedrooms', 8000000, 6);
+
+INSERT INTO Rooms (RoomID, RoomNumber, RoomTypeID, Floor, Status) VALUES
+(1, '401', 1, 4, 'Available'),
+(2, '402', 1, 4, 'Occupied'),
+(3, '403', 1, 4, 'Available'),
+(4, '501', 2, 5, 'Maintenance'),
+(5, '502', 2, 5, 'Available'),
+(6, '503', 2, 5, 'Occupied'),
+(7, '601', 3, 6, 'Available'),
+(8, '602', 3, 6, 'Occupied'),
+(9, '701', 4, 7, 'Available'),
+(10, '702', 4, 7, 'Occupied'),
+(11, '801', 5, 8, 'Available'),
+(12, '802', 5, 8, 'Maintenance');

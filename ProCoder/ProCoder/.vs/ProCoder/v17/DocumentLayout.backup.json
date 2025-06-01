@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Learning\\DoAn\\ProCoder\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\areas\\admin\\views\\problemsadmin\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:areas\\admin\\views\\problemsadmin\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\controllers\\problemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:controllers\\problemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\views\\contests\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:views\\contests\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|d:\\learning\\doan\\procoder\\areas\\admin\\views\\codersadmin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37280654-6456-4179-9524-C41BC6B3349E}|ProCoder.csproj|solutionrelative:areas\\admin\\views\\codersadmin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Areas\\Admin\\Views\\ProblemsAdmin\\Details.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\ProblemsAdmin\\Details.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Areas\\Admin\\Views\\ProblemsAdmin\\Details.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\ProblemsAdmin\\Details.cshtml",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAiwIoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-18T08:25:38.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAALMAAAAAAAAAAAAiwE4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T00:18:10.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Views\\Contests\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Contests\\Index.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Views\\Contests\\Index.cshtml",
+              "RelativeToolTip": "Views\\Contests\\Index.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-10T21:05:53.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProblemsController.cs",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Controllers\\ProblemsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProblemsController.cs",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Controllers\\ProblemsController.cs",
+              "RelativeToolTip": "Controllers\\ProblemsController.cs",
+              "ViewState": "AgIAACwFAAAAAAAAAAAcwLACAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T08:52:31.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Learning\\DoAn\\ProCoder\\Areas\\Admin\\Views\\CodersAdmin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\CodersAdmin\\Index.cshtml",
+              "ToolTip": "D:\\Learning\\DoAn\\ProCoder\\Areas\\Admin\\Views\\CodersAdmin\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\CodersAdmin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T16:17:06.359Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

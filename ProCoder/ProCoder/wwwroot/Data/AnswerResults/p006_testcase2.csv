@@ -1,0 +1,11 @@
+CategoryName,DishName,Price,IsSpicy,IsVegetarian
+American,BBQ Ribs,250000,No,No
+American,Hamburger,120000,No,No
+French,Coq au Vin,220000,No,No
+French,Ratatouille,180000,No,Yes
+Italian,Pizza Margherita,150000,No,Yes
+Italian,Pasta Carbonara,135000,No,No
+Mediterranean,Moussaka,165000,No,No
+Mediterranean,Greek Salad,85000,No,Yes
+Mexican,Enchiladas,110000,Yes,No
+Mexican,Tacos,95000,Yes,No 

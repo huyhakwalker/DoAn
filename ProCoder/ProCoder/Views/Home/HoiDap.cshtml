@@ -1,0 +1,371 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Hỏi & Đáp";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="fas fa-question-circle me-2"></i>Hỏi & Đáp về SQL</h4>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- SQL Cơ bản -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    SQL là gì và tại sao nó quan trọng?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p><strong>SQL (Structured Query Language)</strong> là ngôn ngữ tiêu chuẩn để tương tác với cơ sở dữ liệu quan hệ. SQL cho phép bạn truy vấn, thao tác và quản lý dữ liệu trong các hệ thống quản lý cơ sở dữ liệu như MySQL, PostgreSQL, SQL Server, Oracle, và nhiều hệ thống khác.</p>
+
+                                    <p>SQL quan trọng vì:</p>
+                                    <ul>
+                                        <li>Hầu hết các ứng dụng hiện đại đều sử dụng cơ sở dữ liệu quan hệ</li>
+                                        <li>Kỹ năng SQL là yêu cầu cơ bản cho nhiều vị trí công việc trong CNTT</li>
+                                        <li>SQL giúp phân tích dữ liệu hiệu quả và đưa ra quyết định dựa trên dữ liệu</li>
+                                        <li>SQL là nền tảng cho nhiều công nghệ dữ liệu hiện đại</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Các câu lệnh SQL cơ bản -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Các câu lệnh SQL cơ bản
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <h5>1. SELECT - Truy vấn dữ liệu</h5>
+                                    <pre><code class="language-sql">SELECT column1, column2 FROM table_name;
+SELECT * FROM table_name;</code></pre>
+
+                                    <h5>2. WHERE - Lọc dữ liệu</h5>
+                                    <pre><code class="language-sql">SELECT column1, column2 FROM table_name WHERE condition;</code></pre>
+
+                                    <h5>3. ORDER BY - Sắp xếp dữ liệu</h5>
+                                    <pre><code class="language-sql">SELECT column1, column2 FROM table_name ORDER BY column1 ASC|DESC;</code></pre>
+
+                                    <h5>4. INSERT - Thêm dữ liệu</h5>
+                                    <pre><code class="language-sql">INSERT INTO table_name (column1, column2) VALUES (value1, value2);</code></pre>
+
+                                    <h5>5. UPDATE - Cập nhật dữ liệu</h5>
+                                    <pre><code class="language-sql">UPDATE table_name SET column1 = value1 WHERE condition;</code></pre>
+
+                                    <h5>6. DELETE - Xóa dữ liệu</h5>
+                                    <pre><code class="language-sql">DELETE FROM table_name WHERE condition;</code></pre>
+
+                                    <h5>7. JOIN - Kết hợp dữ liệu từ nhiều bảng</h5>
+                                    <pre><code class="language-sql">SELECT column1, column2 FROM table1
+INNER JOIN table2 ON table1.column = table2.column;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hàm tổng hợp -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Các hàm tổng hợp trong SQL
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>SQL cung cấp nhiều hàm tổng hợp để thực hiện các phép tính trên tập dữ liệu:</p>
+
+                                    <ul>
+                                        <li><strong>COUNT()</strong> - Đếm số lượng bản ghi</li>
+                                        <li><strong>SUM()</strong> - Tính tổng giá trị</li>
+                                        <li><strong>AVG()</strong> - Tính giá trị trung bình</li>
+                                        <li><strong>MIN()</strong> - Tìm giá trị nhỏ nhất</li>
+                                        <li><strong>MAX()</strong> - Tìm giá trị lớn nhất</li>
+                                    </ul>
+
+                                    <p>Ví dụ:</p>
+                                    <pre><code class="language-sql">SELECT COUNT(*) FROM employees;
+SELECT AVG(salary) FROM employees;
+SELECT MAX(price) FROM products;</code></pre>
+
+                                    <p>Các hàm này thường được sử dụng với GROUP BY để tính toán trên các nhóm dữ liệu:</p>
+                                    <pre><code class="language-sql">SELECT department, COUNT(*) as employee_count 
+FROM employees 
+GROUP BY department;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subquery -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Subquery (Truy vấn con) trong SQL
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Subquery (truy vấn con) là một truy vấn SQL nằm trong một truy vấn SQL khác. Subquery có thể được sử dụng với các câu lệnh SELECT, INSERT, UPDATE hoặc DELETE.</p>
+
+                                    <p>Ví dụ: Tìm các sản phẩm có giá cao hơn giá trung bình</p>
+                                    <pre><code class="language-sql">SELECT product_name, price 
+FROM products 
+WHERE price > (SELECT AVG(price) FROM products);</code></pre>
+
+                                    <p>Subquery có thể trả về:</p>
+                                    <ul>
+                                        <li>Một giá trị đơn (scalar)</li>
+                                        <li>Một danh sách giá trị (IN)</li>
+                                        <li>Một bảng kết quả (FROM)</li>
+                                    </ul>
+
+                                    <p>Ví dụ với IN:</p>
+                                    <pre><code class="language-sql">SELECT employee_name 
+FROM employees 
+WHERE department_id IN (SELECT id FROM departments WHERE location = 'New York');</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Về hệ thống chấm bài -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Hệ thống chấm bài SQL hoạt động như thế nào?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Hệ thống chấm bài SQL của ProCoder hoạt động theo các bước sau:</p>
+
+                                    <ol>
+                                        <li><strong>Chuẩn bị môi trường</strong>: Hệ thống tạo một cơ sở dữ liệu tạm thời với schema và dữ liệu mẫu cho mỗi bài tập.</li>
+                                        <li><strong>Thực thi truy vấn</strong>: Câu truy vấn SQL của bạn được thực thi trong môi trường an toàn.</li>
+                                        <li><strong>So sánh kết quả</strong>: Kết quả từ truy vấn của bạn được so sánh với kết quả mong đợi.</li>
+                                        <li><strong>Đánh giá</strong>: Hệ thống đánh giá câu trả lời dựa trên độ chính xác và hiệu suất.</li>
+                                        <li><strong>Phản hồi</strong>: Bạn nhận được phản hồi ngay lập tức về kết quả và gợi ý cải thiện nếu cần.</li>
+                                    </ol>
+
+                                    <p><strong>Lưu ý quan trọng:</strong></p>
+                                    <ul>
+                                        <li>Hệ thống chỉ chấp nhận các câu lệnh SELECT cho các bài tập truy vấn.</li>
+                                        <li>Các câu lệnh thay đổi dữ liệu (INSERT, UPDATE, DELETE) chỉ được phép trong các bài tập cụ thể về thao tác dữ liệu.</li>
+                                        <li>Thời gian thực thi có giới hạn để đảm bảo hiệu suất hệ thống.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mẹo làm bài -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Mẹo làm bài tập SQL hiệu quả
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Dưới đây là một số mẹo giúp bạn giải quyết bài tập SQL hiệu quả:</p>
+
+                                    <ol>
+                                        <li><strong>Hiểu rõ yêu cầu</strong>: Đọc kỹ đề bài và hiểu chính xác những gì được yêu cầu.</li>
+                                        <li><strong>Phân tích cấu trúc dữ liệu</strong>: Hiểu rõ schema của cơ sở dữ liệu, các bảng và mối quan hệ giữa chúng.</li>
+                                        <li><strong>Bắt đầu đơn giản</strong>: Viết truy vấn đơn giản trước, sau đó mở rộng dần để đáp ứng yêu cầu phức tạp hơn.</li>
+                                        <li><strong>Kiểm tra từng phần</strong>: Kiểm tra từng phần của truy vấn để đảm bảo nó hoạt động như mong đợi.</li>
+                                        <li><strong>Tối ưu hóa</strong>: Sau khi có kết quả đúng, xem xét tối ưu hóa truy vấn để cải thiện hiệu suất.</li>
+                                    </ol>
+
+                                    <p><strong>Các lỗi thường gặp cần tránh:</strong></p>
+                                    <ul>
+                                        <li>Thiếu điều kiện WHERE dẫn đến kết quả quá nhiều</li>
+                                        <li>Sử dụng JOIN không đúng cách</li>
+                                        <li>Quên GROUP BY khi sử dụng hàm tổng hợp</li>
+                                        <li>Sai thứ tự các mệnh đề (WHERE phải đứng trước GROUP BY, GROUP BY đứng trước HAVING, và HAVING đứng trước ORDER BY)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phần câu hỏi thường gặp về hệ thống -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="fas fa-info-circle me-2"></i>Câu hỏi về hệ thống ProCoder</h4>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="systemFaqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSystem1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSystem1" aria-expanded="true" aria-controls="collapseSystem1">
+                                    Làm thế nào để bắt đầu với ProCoder?
+                                </button>
+                            </h2>
+                            <div id="collapseSystem1" class="accordion-collapse collapse show" aria-labelledby="headingSystem1" data-bs-parent="#systemFaqAccordion">
+                                <div class="accordion-body">
+                                    <p>Để bắt đầu sử dụng ProCoder, hãy làm theo các bước sau:</p>
+                                    <ol>
+                                        <li>Đăng ký tài khoản hoặc đăng nhập nếu bạn đã có tài khoản</li>
+                                        <li>Truy cập mục "Bài tập" để xem danh sách các bài tập SQL</li>
+                                        <li>Bắt đầu với các bài tập cơ bản và tiến dần đến các bài tập nâng cao</li>
+                                        <li>Tham gia các kỳ thi để kiểm tra kỹ năng của bạn</li>
+                                        <li>Theo dõi tiến độ của bạn trong mục "Bảng chấm bài"</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSystem2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSystem2" aria-expanded="false" aria-controls="collapseSystem2">
+                                    Làm thế nào để tham gia kỳ thi?
+                                </button>
+                            </h2>
+                            <div id="collapseSystem2" class="accordion-collapse collapse" aria-labelledby="headingSystem2" data-bs-parent="#systemFaqAccordion">
+                                <div class="accordion-body">
+                                    <p>Để tham gia kỳ thi trên ProCoder:</p>
+                                    <ol>
+                                        <li>Truy cập mục "Kỳ thi" để xem danh sách các kỳ thi sắp diễn ra</li>
+                                        <li>Đăng ký tham gia kỳ thi bạn quan tâm</li>
+                                        <li>Đăng nhập vào hệ thống trước thời gian bắt đầu kỳ thi</li>
+                                        <li>Khi kỳ thi bắt đầu, bạn sẽ thấy danh sách các bài tập cần giải quyết</li>
+                                        <li>Nộp bài trong thời gian quy định</li>
+                                    </ol>
+                                    <p>Lưu ý: Một số kỳ thi có thể yêu cầu mật khẩu hoặc chỉ dành cho nhóm người dùng cụ thể.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSystem3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSystem3" aria-expanded="false" aria-controls="collapseSystem3">
+                                    Tôi có thể đặt câu hỏi ở đâu?
+                                </button>
+                            </h2>
+                            <div id="collapseSystem3" class="accordion-collapse collapse" aria-labelledby="headingSystem3" data-bs-parent="#systemFaqAccordion">
+                                <div class="accordion-body">
+                                    <p>Nếu bạn có câu hỏi hoặc gặp vấn đề khi sử dụng ProCoder, bạn có thể:</p>
+                                    <ul>
+                                        <li>Sử dụng chức năng "Chat" để đặt câu hỏi trực tiếp</li>
+                                        <li>Tạo một chủ đề mới trong mục "Hỏi & Đáp" để cộng đồng có thể giúp đỡ</li>
+                                        <li>Liên hệ với giáo viên hoặc quản trị viên qua email</li>
+                                    </ul>
+                                    <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn trong quá trình học tập!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5><i class="fas fa-link me-2"></i>Tài nguyên học SQL</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="https://www.w3schools.com/sql/" target="_blank" class="text-decoration-none">
+                                <i class="fas fa-external-link-alt me-2"></i>W3Schools SQL Tutorial
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.sqlzoo.net/" target="_blank" class="text-decoration-none">
+                                <i class="fas fa-external-link-alt me-2"></i>SQLZoo
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://mode.com/sql-tutorial/" target="_blank" class="text-decoration-none">
+                                <i class="fas fa-external-link-alt me-2"></i>Mode SQL Tutorial
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.codecademy.com/learn/learn-sql" target="_blank" class="text-decoration-none">
+                                <i class="fas fa-external-link-alt me-2"></i>Codecademy SQL Course
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.hackerrank.com/domains/sql" target="_blank" class="text-decoration-none">
+                                <i class="fas fa-external-link-alt me-2"></i>HackerRank SQL Challenges
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5><i class="fas fa-book me-2"></i>Sách tham khảo</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <img src="https://m.media-amazon.com/images/I/51wYJ-KXsML._SY445_SX342_.jpg" alt="SQL Cookbook" class="img-thumbnail me-3" style="width: 60px;">
+                            <div>
+                                <h6>SQL Cookbook</h6>
+                                <p class="mb-0 text-muted">Anthony Molinaro</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <img src="https://m.media-amazon.com/images/I/51Jj12iMZnL._SY445_SX342_.jpg" alt="Head First SQL" class="img-thumbnail me-3" style="width: 60px;">
+                            <div>
+                                <h6>Head First SQL</h6>
+                                <p class="mb-0 text-muted">Lynn Beighley</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <img src="https://m.media-amazon.com/images/I/51cUVaBWZzL._SY445_SX342_.jpg" alt="SQL Performance Explained" class="img-thumbnail me-3" style="width: 60px;">
+                            <div>
+                                <h6>SQL Performance Explained</h6>
+                                <p class="mb-0 text-muted">Markus Winand</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Highlight code blocks
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('pre code').forEach(function(block) {
+                block.innerHTML = block.innerHTML
+                    .replace(/SELECT/g, '<span class="text-primary">SELECT</span>')
+                    .replace(/FROM/g, '<span class="text-primary">FROM</span>')
+                    .replace(/WHERE/g, '<span class="text-primary">WHERE</span>')
+                    .replace(/GROUP BY/g, '<span class="text-primary">GROUP BY</span>')
+                    .replace(/ORDER BY/g, '<span class="text-primary">ORDER BY</span>')
+                    .replace(/HAVING/g, '<span class="text-primary">HAVING</span>')
+                    .replace(/JOIN/g, '<span class="text-primary">JOIN</span>')
+                    .replace(/INNER JOIN/g, '<span class="text-primary">INNER JOIN</span>')
+                    .replace(/LEFT JOIN/g, '<span class="text-primary">LEFT JOIN</span>')
+                    .replace(/RIGHT JOIN/g, '<span class="text-primary">RIGHT JOIN</span>')
+                    .replace(/INSERT INTO/g, '<span class="text-primary">INSERT INTO</span>')
+                    .replace(/VALUES/g, '<span class="text-primary">VALUES</span>')
+                    .replace(/UPDATE/g, '<span class="text-primary">UPDATE</span>')
+                    .replace(/SET/g, '<span class="text-primary">SET</span>')
+                    .replace(/DELETE FROM/g, '<span class="text-primary">DELETE FROM</span>')
+                    .replace(/COUNT\(\*\)/g, '<span class="text-success">COUNT(*)</span>')
+                    .replace(/AVG\(/g, '<span class="text-success">AVG(</span>')
+                    .replace(/SUM\(/g, '<span class="text-success">SUM(</span>')
+                    .replace(/MIN\(/g, '<span class="text-success">MIN(</span>')
+                    .replace(/MAX\(/g, '<span class="text-success">MAX(</span>')
+                    .replace(/IN \(/g, '<span class="text-primary">IN </span>(');
+            });
+        });
+    </script>
+}

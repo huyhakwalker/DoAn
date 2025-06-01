@@ -1,0 +1,6 @@
+TypeName,BasePrice,Capacity,TotalRooms,AvailableRooms,OccupiedRooms,MaintenanceRooms
+Presidential Suite,8000000,6,2,1,0,1
+Family Suite,3500000,4,2,1,1,0
+Family Standard,2000000,4,2,1,1,0
+Double Deluxe,1800000,2,3,1,1,1
+Double Standard,1200000,2,3,1,1,1 

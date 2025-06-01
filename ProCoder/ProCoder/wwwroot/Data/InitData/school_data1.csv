@@ -1,0 +1,16 @@
+
+INSERT INTO Classes (ClassID, ClassName, Grade, TeacherName, RoomNumber) VALUES
+(1, '1A', 1, 'Ms. Sarah Johnson', '101'),
+(2, '1B', 1, 'Mr. David Wilson', '102'),
+(3, '2A', 2, 'Ms. Emily Brown', '201'),
+(4, '2B', 2, 'Mr. Michael Davis', '202');
+
+INSERT INTO Students (StudentID, FirstName, LastName, ClassID, DateOfBirth, Gender, Address) VALUES
+(1, 'John', 'Smith', 1, '2016-05-15', 'Male', '123 Apple Street'),
+(2, 'Emma', 'Johnson', 1, '2016-07-20', 'Female', '456 Orange Avenue'),
+(3, 'William', 'Brown', 2, '2016-03-10', 'Male', '789 Grape Road'),
+(4, 'Sophia', 'Davis', 2, '2016-09-25', 'Female', '321 Banana Lane'),
+(5, 'James', 'Wilson', 3, '2015-04-12', 'Male', '654 Cherry Street'),
+(6, 'Olivia', 'Miller', 3, '2015-08-30', 'Female', '987 Peach Avenue'),
+(7, 'Alexander', 'Taylor', 4, '2015-06-18', 'Male', '147 Mango Road'),
+(8, 'Isabella', 'Anderson', 4, '2015-11-05', 'Female', '258 Pear Lane'); 

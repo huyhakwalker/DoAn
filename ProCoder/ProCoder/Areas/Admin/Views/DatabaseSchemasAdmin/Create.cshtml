@@ -1,0 +1,64 @@
+@model ProCoder.Models.DatabaseSchema
+
+@{
+    ViewData["Title"] = "Tạo mới Database Schema";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                </div>
+            }
+            <form asp-area="Admin" asp-controller="DatabaseSchemasAdmin" asp-action="Create" method="post">
+                <div class="form-group mb-3">
+                    <label for="SchemaName" class="form-label">Tên Schema</label>
+                    <input type="text" id="SchemaName" name="SchemaName"
+                           class="form-control" required
+                           placeholder="Nhập tên schema" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Description" class="form-label">Mô tả</label>
+                    <textarea id="Description" name="Description"
+                              class="form-control" rows="4"
+                              placeholder="Mô tả schema database"></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="SchemaDefinition" class="form-label">Định nghĩa Schema (SQL)</label>
+                    <textarea id="SchemaDefinition" name="SchemaDefinition"
+                              class="form-control" rows="10" style="font-family: 'Courier New', monospace;"
+                              placeholder="Nhập các lệnh SQL tạo bảng và dữ liệu mẫu" required></textarea>
+                    <small class="form-text text-muted">
+                        Nhập các lệnh SQL để tạo cấu trúc bảng cho schema này
+                    </small>
+                </div>
+
+                @Html.AntiForgeryToken()
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-save"></i> Tạo Schema
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        // Tự động format mã SQL
+        $(document).ready(function() {
+            // Có thể thêm một số công cụ format SQL nếu cần
+        });
+    </script>
+}

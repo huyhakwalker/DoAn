@@ -1,0 +1,99 @@
+﻿@model ProCoder.Models.Coder
+
+@{
+    ViewData["Title"] = "Chỉnh sửa - Quản lý tài khoản Coder";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var avatarUrl = string.IsNullOrEmpty(Model.CoderAvatar) 
+        ? "~/images/avatar-default.png" 
+        : $"~/images/avatars/{Model.CoderAvatar}";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            <form action="@Url.Action("Edit", "CodersAdmin", new { area = "Admin", id = Model.CoderId })" 
+                  method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="CoderId" value="@Model.CoderId" />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="CoderName" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="CoderName" name="CoderName"
+                                   value="@Model.CoderName" required />
+                            <span class="text-danger">@Html.ValidationMessageFor(m => m.CoderName)</span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="CoderEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="CoderEmail" name="CoderEmail"
+                                   value="@Model.CoderEmail" required />
+                            <span class="text-danger">@Html.ValidationMessageFor(m => m.CoderEmail)</span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="AvatarFile" class="form-label">Ảnh đại diện</label>
+                            <input type="file" class="form-control" id="AvatarFile" name="AvatarFile" 
+                                   accept="image/*" />
+                            @if (!string.IsNullOrEmpty(Model.CoderAvatar))
+                            {
+                                <div class="mt-2">
+                                    <img src="@Url.Content(avatarUrl)" class="img-thumbnail" 
+                                         alt="Avatar" style="max-width: 200px;" />
+                                </div>
+                            }
+                            <div class="form-text">Để trống nếu không muốn thay đổi ảnh đại diện</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="Gender" class="form-label">Giới tính</label>
+                            <select class="form-select" id="Gender" name="Gender">
+                                <option value="">-- Chọn giới tính --</option>
+                                <option value="true" @(Model.Gender == true ? "selected" : "")>Nam</option>
+                                <option value="false" @(Model.Gender == false ? "selected" : "")>Nữ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="AdminCoder" class="form-label">Quyền Admin</label>
+                            <select class="form-select" id="AdminCoder" name="AdminCoder">
+                                <option value="false" @(!Model.AdminCoder ? "selected" : "")>Không</option>
+                                <option value="true" @(Model.AdminCoder ? "selected" : "")>Có</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="ContestSetter" class="form-label">Quyền tạo Contest</label>
+                            <select class="form-select" id="ContestSetter" name="ContestSetter">
+                                <option value="false" @(!Model.ContestSetter ? "selected" : "")>Không</option>
+                                <option value="true" @(Model.ContestSetter ? "selected" : "")>Có</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="ReceiveEmail" class="form-label">Nhận email thông báo</label>
+                            <select class="form-select" id="ReceiveEmail" name="ReceiveEmail">
+                                <option value="true" @(Model.ReceiveEmail == true ? "selected" : "")>Có</option>
+                                <option value="false" @(Model.ReceiveEmail == false ? "selected" : "")>Không</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-save"></i> Lưu thay đổi
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

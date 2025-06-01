@@ -1,0 +1,230 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProCoder.Models.Coder
+
+@{
+    ViewData["Title"] = "Thông tin cá nhân";
+    var avatarUrl = string.IsNullOrEmpty(Model.CoderAvatar) 
+        ? "~/images/avatar-default.png" 
+        : $"~/images/avatars/{Model.CoderAvatar}";
+        
+    // Đếm số lượng bài tập yêu thích
+    var favouriteCount = (new SqlExerciseScoringContext())
+        .Favourites
+        .Count(f => f.CoderId == Model.CoderId);
+        
+    // Đếm số lượng bài đã giải - dùng bảng Solved
+    var solvedCount = (new SqlExerciseScoringContext())
+        .Coders
+        .Where(c => c.CoderId == Model.CoderId)
+        .SelectMany(c => c.ProblemsNavigation)
+        .Count();
+}
+
+<style>
+    .nav-tabs .nav-link {
+        color: #495057;
+        border: none;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-tabs .nav-link:hover {
+        border-color: transparent;
+        background-color: #e9ecef;
+        color: #0d6efd;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #0d6efd;
+        background-color: transparent;
+        border-bottom: 2px solid #0d6efd;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #0d6efd;
+        color: white;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+    }
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+
+    .form-select:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+</style>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="text-center mb-4">
+                <img src="@Url.Content(avatarUrl)" alt="avatar" 
+                     class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="mt-3">
+                    <h4>Tài khoản: @Model.CoderEmail</h4>
+                    <h5>Họ tên: @Model.CoderName</h5>
+                    @if (Model.AdminCoder)
+                    {
+                        <span class="badge bg-danger me-2">Admin</span>
+                    }
+                    @if (Model.ContestSetter)
+                    {
+                        <span class="badge bg-primary me-2">Người ra đề</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Người dùng</span>
+                    }
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6 text-center">
+                    <div class="border rounded p-3">
+                        <h5>Số bài đã giải</h5>
+                        <p class="h3">@solvedCount</p>
+                        <a href="@Url.Action("Index", "Solved")" class="btn btn-sm btn-outline-primary">Xem</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="border rounded p-3">
+                        <h5>Bài tập yêu thích</h5>
+                        <p class="h3">@favouriteCount</p>
+                        <a href="@Url.Action("Index", "Favourites")" class="btn btn-sm btn-outline-primary">Xem</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#profile" data-bs-toggle="tab">Thông tin cá nhân</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#password" data-bs-toggle="tab">Đổi mật khẩu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#avatar" data-bs-toggle="tab">Đổi hình ảnh</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="profile">
+                            @if (TempData["SuccessMessage"] != null)
+                            {
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    @TempData["SuccessMessage"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            }
+
+                            <form method="post" action="@Url.Action("UpdateProfile", "Coders")">
+                                <div class="mb-3">
+                                    <label for="CoderName" class="form-label">Họ và tên</label>
+                                    <input type="text" class="form-control" id="CoderName" name="CoderName" 
+                                           value="@Model.CoderName" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="CoderEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="CoderEmail" name="CoderEmail" 
+                                           value="@Model.CoderEmail" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="Gender" class="form-label">Giới tính</label>
+                                    @{
+                                        var isMale = Model.Gender.HasValue && Model.Gender.Value;
+                                        var isFemale = Model.Gender.HasValue && !Model.Gender.Value;
+                                    }
+                                    <select class="form-select" id="Gender" name="Gender">
+                                        <option value="">Chọn giới tính</option>
+                                        @if (isMale)
+                                        {
+                                            <option value="true" selected>Nam</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="true">Nam</option>
+                                        }
+                                        @if (isFemale)
+                                        {
+                                            <option value="false" selected>Nữ</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="false">Nữ</option>
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        @{
+                                            var isChecked = Model.ReceiveEmail.HasValue && Model.ReceiveEmail.Value;
+                                        }
+                                        <input type="checkbox" class="form-check-input" id="ReceiveEmail" 
+                                               name="ReceiveEmail" value="true" @(isChecked ? "checked" : "")>
+                                        <label class="form-check-label" for="ReceiveEmail">
+                                            Nhận thông báo qua email
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-2"></i>Lưu thay đổi
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="password">
+                            <form method="post" action="@Url.Action("ChangePassword", "Coders")">
+                                <div class="mb-3">
+                                    <label for="CurrentPassword" class="form-label">Mật khẩu hiện tại</label>
+                                    <input type="password" class="form-control" id="CurrentPassword" name="CurrentPassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="NewPassword" class="form-label">Mật khẩu mới</label>
+                                    <input type="password" class="form-control" id="NewPassword" name="NewPassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ConfirmPassword" class="form-label">Xác nhận mật khẩu mới</label>
+                                    <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-key me-2"></i>Đổi mật khẩu
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="avatar">
+                            <form method="post" action="@Url.Action("ChangeAvatar", "Coders")" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="AvatarFile" class="form-label">Chọn ảnh đại diện mới</label>
+                                    <input type="file" class="form-control" id="AvatarFile" name="AvatarFile" accept="image/*" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-upload me-2"></i>Cập nhật ảnh đại diện
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

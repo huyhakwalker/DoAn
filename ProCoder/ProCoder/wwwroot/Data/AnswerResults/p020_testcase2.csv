@@ -1,0 +1,6 @@
+DepartmentName,Location,HeadProfessor,NumberOfStudents,AverageGPA,MinGPA,MaxGPA,DepartmentRank
+Department of Mechanical Engineering,Building E,Prof. Hoang Van E,2,3.90,3.85,3.95,1
+Department of Medicine,Building G,Prof. Bui Van G,2,3.85,3.80,3.90,2
+Department of Law,Building H,Prof. Mai Thi H,2,3.70,3.65,3.75,3
+Department of Construction,Building F,Prof. Dang Thi F,2,3.65,3.60,3.70,4
+Department of Environment,Building I,Prof. Duong Van I,2,3.50,3.45,3.55,5 

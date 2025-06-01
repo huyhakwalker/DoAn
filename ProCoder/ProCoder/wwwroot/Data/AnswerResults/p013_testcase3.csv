@@ -1,0 +1,5 @@
+DepartmentName,Location,EmployeeCount,AverageSalary,MinSalary,MaxSalary,Positions
+Technology,Floor 5,4,82500,75000,90000,CTO, Solutions Architect, Senior Developer, Developer
+Legal,Floor 6,2,77500,75000,80000,Legal Director, Legal Counsel
+Finance,Floor 3,3,73333.33,70000,78000,Finance Director, Senior Accountant, Accountant
+Marketing,Floor 2,2,71000,67000,75000,Marketing Director, Marketing Specialist 

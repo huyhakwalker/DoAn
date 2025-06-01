@@ -1,0 +1,18 @@
+INSERT INTO Categories (CategoryID, CategoryName, Description) VALUES
+(1,'Italian', 'Italian cuisine'),
+(2,'French', 'French cuisine'),
+(3,'American', 'American cuisine'),
+(4,'Mexican', 'Mexican cuisine'),
+(5,'Mediterranean', 'Mediterranean cuisine');
+
+INSERT INTO Dishes (DishID, DishName, CategoryID, Price, Description, IsSpicy, IsVegetarian) VALUES
+(1,'Pizza Margherita', 1, 150000, 'Traditional pizza with tomato sauce and cheese', 0, 1),
+(2,'Coq au Vin', 2, 220000, 'Chicken in red wine sauce', 0, 0),
+(3,'Hamburger', 3, 120000, 'Beef burger with cheese', 0, 0),
+(4,'Tacos', 4, 95000, 'Spicy beef tacos', 1, 0),
+(5,'Pasta Carbonara', 1, 135000, 'Pasta with cream sauce and bacon', 0, 0),
+(6,'Ratatouille', 2, 180000, 'French vegetable stew', 0, 1),
+(7,'BBQ Ribs', 3, 250000, 'BBQ grilled ribs', 0, 0),
+(8,'Enchiladas', 4, 110000, 'Chicken enchiladas', 1, 0),
+(9,'Greek Salad', 5, 85000, 'Greek salad with Feta cheese', 0, 1),
+(10,'Moussaka', 5, 165000, 'Traditional eggplant moussaka', 0, 0); 

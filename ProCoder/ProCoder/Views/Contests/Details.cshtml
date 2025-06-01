@@ -1,0 +1,492 @@
+@model ProCoder.Models.Contest
+
+@{
+    ViewData["Title"] = Model.ContestName;
+    
+    // Check user registration status
+    bool isUserRegistered = false;
+    if (ViewBag.IsUserRegistered != null)
+    {
+        isUserRegistered = ViewBag.IsUserRegistered;
+    }
+    
+    // Check for TempData registration flag
+    if (TempData["UserJustRegistered"] != null && (bool)TempData["UserJustRegistered"] == true)
+    {
+        isUserRegistered = true;
+    }
+}
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(45deg, #4e73df, #2e59d9);
+    }
+    .problem-card {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        text-decoration: none !important;
+        color: inherit !important;
+        display: block;
+    }
+    .problem-card:hover {
+        transform: translateY(-5px);
+        border-color: #4e73df;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+    .disabled-card {
+        opacity: 0.7;
+        cursor: not-allowed !important;
+        position: relative;
+        pointer-events: none; /* Chặn mọi sự kiện click */
+    }
+    .disabled-card:hover {
+        transform: none !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+    }
+    .disabled-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.03);
+        z-index: 1;
+    }
+    .contest-details-card {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .contest-badge {
+        font-size: 0.9rem;
+    }
+    .problems-list {
+        margin-top: 2rem;
+    }
+    
+    /* Thêm styles mới */
+    .card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    
+    .card-subtitle {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+    
+    .problem-card .card-body {
+        padding: 1.25rem;
+    }
+    
+    .problem-card .card-footer {
+        background-color: rgba(0,0,0,0.02);
+        border-top: 1px solid rgba(0,0,0,0.08);
+        padding: 0.75rem 1.25rem;
+    }
+    
+    .problem-card .alert {
+        margin: 0;
+        font-size: 0.85rem;
+    }
+    
+    .problem-card .alert-success {
+        background-color: rgba(25, 135, 84, 0.15);
+        border-color: rgba(25, 135, 84, 0.4);
+        color: #198754;
+    }
+    
+    .problem-card .alert-warning {
+        background-color: rgba(255, 193, 7, 0.15);
+        border-color: rgba(255, 193, 7, 0.4);
+        color: #cc9a06;
+    }
+    
+    /* Thêm thông báo trạng thái cho các bài tập không khả dụng */
+    .unavailable-problem-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.05);
+        z-index: 2;
+        opacity: 1; /* Luôn hiển thị overlay */
+    }
+    
+    .unavailable-problem-message {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="container py-4">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <a asp-action="Index" class="back-link">
+            <i class="bi bi-arrow-left"></i> Quay lại danh sách
+        </a>
+    </nav>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["InfoMessage"] != null)
+    {
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            @TempData["InfoMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm contest-details-card mb-4">
+        <div class="card-header bg-gradient-primary text-white py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold">@Model.ContestName</h5>
+                <span class="badge bg-light text-dark contest-badge">
+                    @GetContestStatus(Model)
+                </span>
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-muted mb-4">@Model.ContestDescription</p>
+                    
+                    <div class="d-flex mb-3">
+                        <div class="me-4">
+                            <i class="far fa-calendar-alt text-primary me-2"></i> 
+                            <strong>Bắt đầu:</strong> @Model.StartTime.ToString("dd/MM/yyyy HH:mm")
+                        </div>
+                        <div>
+                            <i class="far fa-calendar-check text-primary me-2"></i>
+                            <strong>Kết thúc:</strong> @Model.EndTime.ToString("dd/MM/yyyy HH:mm")
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <i class="far fa-clock text-primary me-2"></i>
+                        <strong>Thời gian làm bài:</strong> @Model.Duration phút
+                    </div>
+                    
+                    <div>
+                        <i class="far fa-user text-primary me-2"></i>
+                        <strong>Người tạo:</strong> @Model.Coder.CoderName
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Số lượng bài tập
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        @Model.HasProblems.Count
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-tasks fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 mt-3">
+                        @if (Model.StatusContest == "Finished")
+                        {
+                            <button class="btn btn-secondary btn-lg" disabled>
+                                <i class="fas fa-times-circle me-2"></i> Cuộc thi đã kết thúc
+                            </button>
+                        }
+                        else if (isUserRegistered)
+                        {
+                            <button class="btn btn-success btn-lg" disabled>
+                                <i class="fas fa-check-circle me-2"></i> Đã đăng ký tham gia
+                            </button>
+                            
+                            <div class="alert alert-success mt-2 text-center">
+                                <small>Bạn đã đăng ký tham gia cuộc thi này thành công</small>
+                            </div>
+                        }
+                        else
+                        {
+                            <button id="registerButton" class="btn btn-success btn-lg">
+                                <i class="fas fa-user-plus me-2"></i> Đăng ký tham gia
+                            </button>
+                            @Html.AntiForgeryToken()
+                            <div id="registerMessage" class="alert alert-info mt-2 text-center d-none">
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="problems-list">
+        <h4 class="mb-4 fw-bold">
+            <i class="fas fa-list-ol me-2"></i> Danh sách bài tập
+        </h4>
+        
+        @if (Model.HasProblems != null && Model.HasProblems.Any())
+        {
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                @foreach (var hasProblem in Model.HasProblems.OrderBy(hp => hp.ProblemOrder))
+                {
+                    bool canAttemptProblem = isUserRegistered && Model.StatusContest == "Running";
+                    <div class="col">
+                        @if (canAttemptProblem)
+                        {
+                            <a href="@Url.Action("Details", "Problems", new { id = hasProblem.ProblemId, contestId = Model.ContestId })" 
+                               class="card shadow-sm h-100 problem-card">
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between align-items-center">
+                                        <span class="d-flex align-items-center">
+                                            <i class="fas fa-code text-primary me-2"></i>
+                                            @hasProblem.Problem.ProblemName
+                                        </span>
+                                        <span class="badge bg-primary rounded-pill">
+                                            @hasProblem.PointProblem điểm
+                                        </span>
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 d-flex align-items-center">
+                                        <i class="fas fa-hashtag text-muted me-1" style="font-size: 0.8rem;"></i>
+                                        Mã: @hasProblem.Problem.ProblemCode
+                                    </h6>
+                                    <p class="card-text text-truncate mt-3 mb-0">
+                                        @(hasProblem.Problem.ProblemDescription != null ? 
+                                            hasProblem.Problem.ProblemDescription : "Không có mô tả chi tiết.")
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">
+                                            <i class="fas fa-tag me-1"></i> 
+                                            @(hasProblem.Problem.Theme != null ? 
+                                                hasProblem.Problem.Theme.ThemeName : "Không có chủ đề")
+                                        </small>
+                                    </div>
+                                    
+                                    @if (isUserRegistered && ViewBag.TakeParts != null && ViewBag.TakeParts.ContainsKey(hasProblem.ProblemId))
+                                    {
+                                        var takePart = ViewBag.TakeParts[hasProblem.ProblemId];
+                                        <div class="w-100 text-center mt-2">
+                                            @if (takePart.TimeSolved != null)
+                                            {
+                                                <div class="alert alert-success py-1 mb-0">
+                                                    <i class="fas fa-check-circle me-1"></i> Đã giải đúng - @takePart.PointWon điểm
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="alert alert-warning py-1 mb-0">
+                                                    <i class="fas fa-exclamation-circle me-1"></i> Đã nộp @takePart.SubmissionCount lần
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            <div class="card shadow-sm h-100 problem-card disabled-card">
+                                <div class="unavailable-problem-overlay">
+                                    <div class="unavailable-problem-message">
+                                        @if (!isUserRegistered)
+                                        {
+                                            <i class="fas fa-lock me-1"></i> @("Bạn cần đăng ký cuộc thi trước")
+                                        }
+                                        else if (Model.StatusContest == "Pending")
+                                        {
+                                            <i class="fas fa-clock me-1"></i> @("Cuộc thi chưa bắt đầu")
+                                        }
+                                        else if (Model.StatusContest == "Finished")
+                                        {
+                                            <i class="fas fa-lock me-1"></i> @("Cuộc thi đã kết thúc")
+                                        }
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title d-flex justify-content-between align-items-center">
+                                        <span class="d-flex align-items-center">
+                                            <i class="fas fa-code text-primary me-2"></i>
+                                            @hasProblem.Problem.ProblemName
+                                        </span>
+                                        <span class="badge bg-primary rounded-pill">
+                                            @hasProblem.PointProblem điểm
+                                        </span>
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 d-flex align-items-center">
+                                        <i class="fas fa-hashtag text-muted me-1" style="font-size: 0.8rem;"></i>
+                                        Mã: @hasProblem.Problem.ProblemCode
+                                    </h6>
+                                    <p class="card-text text-truncate mt-3 mb-0">
+                                        @(hasProblem.Problem.ProblemDescription != null ? 
+                                            hasProblem.Problem.ProblemDescription : "Không có mô tả chi tiết.")
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">
+                                            <i class="fas fa-tag me-1"></i> 
+                                            @(hasProblem.Problem.Theme != null ? 
+                                                hasProblem.Problem.Theme.ThemeName : "Không có chủ đề")
+                                        </small>
+                                        
+                                        @if (!isUserRegistered)
+                                        {
+                                            <small class="text-danger">
+                                                <i class="fas fa-lock me-1"></i> Cần đăng ký
+                                            </small>
+                                        }
+                                        else if (Model.StatusContest == "Pending")
+                                        {
+                                            <small class="text-warning">
+                                                <i class="fas fa-clock me-1"></i> Chưa bắt đầu
+                                            </small>
+                                        }
+                                        else if (Model.StatusContest == "Finished")
+                                        {
+                                            <small class="text-secondary">
+                                                <i class="fas fa-lock me-1"></i> Đã kết thúc
+                                            </small>
+                                        }
+                                    </div>
+                                    
+                                    @if (isUserRegistered && ViewBag.TakeParts != null && ViewBag.TakeParts.ContainsKey(hasProblem.ProblemId))
+                                    {
+                                        var takePart = ViewBag.TakeParts[hasProblem.ProblemId];
+                                        <div class="w-100 text-center mt-2">
+                                            @if (takePart.TimeSolved != null)
+                                            {
+                                                <div class="alert alert-success py-1 mb-0">
+                                                    <i class="fas fa-check-circle me-1"></i> Đã giải đúng - @takePart.PointWon điểm
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="alert alert-warning py-1 mb-0">
+                                                    <i class="fas fa-exclamation-circle me-1"></i> Đã nộp @takePart.SubmissionCount lần
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle me-2"></i>
+                Cuộc thi này chưa có bài tập nào.
+            </div>
+        }
+    </div>
+</div>
+
+@functions {
+    public string GetContestStatus(ProCoder.Models.Contest contest)
+    {
+        if (contest.StatusContest == "Running")
+        {
+            return "Đang diễn ra";
+        }
+        else if (contest.StatusContest == "Pending")
+        {
+            return "Sắp diễn ra";
+        }
+        else
+        {
+            return "Đã kết thúc";
+        }
+    }
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Gắn sự kiện click cho nút đăng ký
+            $('#registerButton').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const contestId = @Model.ContestId;
+                
+                // Hiển thị đang tải
+                $('#registerButton').prop('disabled', true);
+                $('#registerButton').html('<i class="fas fa-spinner fa-spin me-2"></i> Đang đăng ký...');
+                
+                // Lấy token từ form
+                var token = $('input[name="__RequestVerificationToken"]').val();
+                
+                // Gửi request đăng ký bằng AJAX
+                $.ajax({
+                    url: '/Participations/Register/' + contestId,
+                    type: 'POST',
+                    data: {
+                        __RequestVerificationToken: token
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+                        if (result.success) {
+                            // Đổi nút đăng ký thành đã đăng ký
+                            $('#registerButton').removeClass('btn-success').addClass('btn-success');
+                            $('#registerButton').html('<i class="fas fa-check-circle me-2"></i> Đã đăng ký tham gia');
+                            $('#registerButton').prop('disabled', true);
+                            
+                            // Hiển thị thông báo
+                            $('#registerMessage').removeClass('d-none alert-info alert-danger').addClass('alert-success');
+                            $('#registerMessage').html('<small>' + result.message + '</small>');
+                        } else {
+                            // Hiển thị lỗi
+                            $('#registerButton').prop('disabled', false);
+                            $('#registerButton').html('<i class="fas fa-user-plus me-2"></i> Đăng ký tham gia');
+                            
+                            $('#registerMessage').removeClass('d-none alert-info alert-success').addClass('alert-danger');
+                            $('#registerMessage').html('<small>' + result.message + '</small>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX Error:", status, error);
+                        // Hiển thị lỗi
+                        $('#registerButton').prop('disabled', false);
+                        $('#registerButton').html('<i class="fas fa-user-plus me-2"></i> Đăng ký tham gia');
+                        
+                        $('#registerMessage').removeClass('d-none alert-info alert-success').addClass('alert-danger');
+                        $('#registerMessage').html('<small>Có lỗi xảy ra, vui lòng thử lại sau</small>');
+                    }
+                });
+                
+                return false;
+            });
+        });
+    </script>
+} 

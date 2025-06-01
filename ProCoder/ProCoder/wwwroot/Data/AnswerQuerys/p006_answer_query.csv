@@ -1,0 +1,10 @@
+SELECT 
+    d.DishName,
+    c.CategoryName,
+    COUNT(o.OrderID) as OrderCount,
+    SUM(o.Quantity * d.Price) as TotalRevenue
+FROM Dishes d
+JOIN Categories c ON d.CategoryID = c.CategoryID
+LEFT JOIN OrderDetails o ON d.DishID = o.DishID
+GROUP BY d.DishName, c.CategoryName
+ORDER BY TotalRevenue DESC; 

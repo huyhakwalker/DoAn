@@ -1,0 +1,5 @@
+DepartmentName,Location,HeadProfessor,NumberOfStudents,AverageGPA,MinGPA,MaxGPA,DepartmentRank
+Department of Foreign Languages,Building C,Prof. Le Van C,2,3.75,3.60,3.90,1
+Department of Information Technology,Building A,Prof. Nguyen Van A,2,3.63,3.50,3.75,2
+Department of Electrical Engineering,Building D,Prof. Pham Thi D,2,3.55,3.40,3.70,3
+Department of Economics,Building B,Prof. Tran Thi B,2,3.53,3.25,3.80,4 

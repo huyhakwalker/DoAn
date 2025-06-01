@@ -1,0 +1,16 @@
+INSERT INTO Departments (DepartmentID, DepartmentName, Location) VALUES
+(1, 'Engineering', 'Building A'),
+(2, 'Sales', 'Building B'),
+(3, 'Research', 'Building A'),
+(4, 'Operations', 'Building C'),
+(5, 'Customer Service', 'Building B');
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName, DepartmentID, Position, Salary, HireDate) VALUES
+(1, 'Sarah', 'Anderson', 1, 'Lead Engineer', 85000, '2019-03-15'),
+(2, 'James', 'Wilson', 2, 'Sales Manager', 70000, '2020-01-10'),
+(3, 'Emily', 'Taylor', 3, 'Research Scientist', 72000, '2021-06-20'),
+(4, 'Robert', 'Martinez', 4, 'Operations Director', 78000, '2019-08-05'),
+(5, 'Jennifer', 'Thomas', 5, 'Customer Service Lead', 55000, '2020-11-30'),
+(6, 'William', 'Garcia', 1, 'Software Engineer', 65000, '2021-02-15'),
+(7, 'Elizabeth', 'Lee', 2, 'Sales Representative', 52000, '2021-09-01'),
+(8, 'Daniel', 'White', 3, 'Research Assistant', 48000, '2022-01-20'); 

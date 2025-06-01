@@ -1,0 +1,88 @@
+@model ProCoder.Models.InitData
+
+@{
+    ViewData["Title"] = "Chi tiết InitData";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết InitData</h6>
+            <div class="d-flex gap-2">
+                <form action="@Url.Action("Edit", "InitDataAdmin", new { area = "Admin", id = Model.InitDataId })" method="get" style="display: inline;">
+                    <button type="submit" class="btn btn-warning">
+                        <i class="fas fa-edit"></i> Chỉnh sửa
+                    </button>
+                </form>
+                <button type="button" class="btn btn-danger" onclick="confirmDelete(@Model.InitDataId)">
+                    <i class="fas fa-trash"></i> Xóa
+                </button>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Tên dữ liệu</label>
+                        <p class="form-control">@Model.DataName</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Mô tả</label>
+                        <div class="form-control" style="height: auto;">@(Model.Description ?? "Không có mô tả")</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Ngày tạo</label>
+                        <p class="form-control">@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Schema liên kết</label>
+                        <p class="form-control">@Model.DatabaseSchema.SchemaName</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Đường dẫn file</label>
+                        <p class="form-control">@Model.DataContentPath</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Cập nhật lần cuối</label>
+                        <p class="form-control">@Model.UpdatedAt.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="form-label fw-bold">Nội dung dữ liệu:</label>
+                <div class="border p-3 bg-light">
+                    <pre><code style="font-family: 'Courier New', monospace; white-space: pre-wrap;">@ViewBag.DataContent</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa InitData này?')) {
+                fetch(`/Admin/InitDataAdmin/Delete/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = '/Admin/DatabaseSchemasAdmin/Detail/@Model.DatabaseSchemaId';
+                    }
+                });
+            }
+        }
+    </script>
+} 

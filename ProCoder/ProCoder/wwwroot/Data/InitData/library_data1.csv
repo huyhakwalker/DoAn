@@ -1,0 +1,9 @@
+INSERT INTO Authors (AuthorID, AuthorName)
+VALUES 
+    (1, 'John Smith'),
+    (2, 'Jane Doe');
+
+INSERT INTO Books (BookID, Title, AuthorID, PublishYear)
+VALUES 
+    (1, 'Database Design', 1, 2020),
+    (2, 'SQL Mastery', 2, 2021); 

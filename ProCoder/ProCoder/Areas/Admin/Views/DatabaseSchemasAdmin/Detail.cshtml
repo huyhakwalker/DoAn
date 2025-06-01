@@ -1,0 +1,170 @@
+@model ProCoder.Models.DatabaseSchema
+
+@{
+    ViewData["Title"] = "Chi tiết Database Schema";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết Database Schema</h6>
+            <div class="d-flex gap-2">
+                <form action="@Url.Action("Edit", "DatabaseSchemasAdmin", new { area = "Admin", id = Model.DatabaseSchemaId })" method="get" style="display: inline;">
+                    <button type="submit" class="btn btn-warning">
+                        <i class="fas fa-edit"></i> Chỉnh sửa
+                    </button>
+                </form>
+                <button type="button" class="btn btn-danger" onclick="confirmDelete(@Model.DatabaseSchemaId)">
+                    <i class="fas fa-trash"></i> Xóa
+                </button>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Mã Schema</label>
+                        <p class="form-control">@Model.DatabaseSchemaId</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Tên Schema</label>
+                        <p class="form-control">@Model.SchemaName</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Mô tả Schema</label>
+                        <div class="form-control" style="height: auto;">@Model.Description</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Ngày tạo</label>
+                        <p class="form-control">@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Cập nhật lần cuối</label>
+                        <p class="form-control">@Model.UpdatedAt.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Định nghĩa Schema (SQL)</label>
+                        <div class="bg-light p-3 border rounded" style="max-height: 400px; overflow-y: auto;">
+                            <pre><code class="sql">@ViewBag.SchemaDefinitionContent</code></pre>
+                        </div>
+                    </div>               
+                </div>
+            </div>
+            @if (TempData["SuccessMessageInitData"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                    @TempData["SuccessMessageInitData"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            @if (TempData["ErrorMessageInitData"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                    @TempData["ErrorMessageInitData"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <div class="mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="font-weight-bold">Danh sách dữ liệu khởi tạo (InitData) của Schema</h5>
+                    <a href="@Url.Action("Create", "InitDataAdmin", new { area = "Admin", databaseSchemaId = Model.DatabaseSchemaId })" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Thêm dữ liệu mới
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên dữ liệu</th>
+                                <th>Mô tả</th>
+                                <th>Ngày tạo</th>
+                                <th>Cập nhật lần cuối</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.InitData != null && Model.InitData.Any())
+                            {
+                                @foreach (var initData in Model.InitData)
+                                {
+                                    <tr>
+                                        <td>@initData.InitDataId</td>
+                                        <td>@initData.DataName</td>
+                                        <td>@(string.IsNullOrEmpty(initData.Description) ? "-" : initData.Description)</td>
+                                        <td>@initData.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                        <td>@initData.UpdatedAt.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="@Url.Action("Details", "InitDataAdmin", new { area = "Admin", id = initData.InitDataId })" class="btn btn-info btn-sm">
+                                                    <i class="fas fa-info-circle"></i> Chi tiết
+                                                </a>
+                                                <a href="@Url.Action("Edit", "InitDataAdmin", new { area = "Admin", id = initData.InitDataId })" class="btn btn-warning btn-sm">
+                                                    <i class="fas fa-edit"></i> Sửa
+                                                </a>
+                                                <button type="button" class="btn btn-danger btn-sm" 
+                                                        onclick="confirmDeleteInitData(@initData.InitDataId)">
+                                                    <i class="fas fa-trash"></i> Xóa
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center">Chưa có dữ liệu khởi tạo nào thuộc schema này.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa database schema này? Hành động này sẽ ảnh hưởng đến các bài tập sử dụng schema này.')) {
+                fetch(`/Admin/DatabaseSchemasAdmin/Delete/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = '/Admin/DatabaseSchemasAdmin';
+                    }
+                });
+            }
+        }
+        
+        function confirmDeleteInitData(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa dữ liệu này?')) {
+                fetch(`/Admin/InitDataAdmin/Delete/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+    </script>
+}

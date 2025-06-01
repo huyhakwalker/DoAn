@@ -1,0 +1,12 @@
+SELECT 
+    rt.TypeName,
+    rt.BasePrice,
+    rt.Capacity,
+    COUNT(r.RoomID) as TotalRooms,
+    SUM(CASE WHEN r.Status = 'Available' THEN 1 ELSE 0 END) as AvailableRooms,
+    SUM(CASE WHEN r.Status = 'Occupied' THEN 1 ELSE 0 END) as OccupiedRooms,
+    SUM(CASE WHEN r.Status = 'Maintenance' THEN 1 ELSE 0 END) as MaintenanceRooms
+FROM RoomTypes rt
+LEFT JOIN Rooms r ON rt.RoomTypeID = r.RoomTypeID
+GROUP BY rt.TypeName, rt.BasePrice, rt.Capacity
+ORDER BY rt.BasePrice DESC; 

@@ -1,0 +1,6 @@
+CategoryName,NumberOfDishes,AveragePrice,MinPrice,MaxPrice,SpicyDishes,VegetarianDishes
+Indian,3,175000,150000,200000,3,1
+Thai,3,133333.33,100000,160000,2,1
+Seafood,2,225000,200000,250000,1,0
+Steakhouse,2,275000,250000,300000,0,0
+Vegetarian,3,120000,100000,140000,0,3 

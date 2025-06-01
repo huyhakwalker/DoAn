@@ -1,0 +1,12 @@
+SELECT 
+    e.FirstName + ' ' + e.LastName as EmployeeName,
+    d.DepartmentName,
+    COUNT(s.SaleID) as TotalSales,
+    SUM(s.Quantity * p.Price) as TotalRevenue,
+    AVG(s.Quantity * p.Price) as AverageOrderValue
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+LEFT JOIN Sales s ON e.EmployeeID = s.EmployeeID
+LEFT JOIN Products p ON s.ProductID = p.ProductID
+GROUP BY e.FirstName, e.LastName, d.DepartmentName
+ORDER BY TotalRevenue DESC; 

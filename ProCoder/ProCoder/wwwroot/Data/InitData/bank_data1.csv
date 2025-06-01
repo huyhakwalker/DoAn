@@ -1,0 +1,15 @@
+INSERT INTO Customers (CustomerID, FirstName, LastName, DateOfBirth, Address, Phone) VALUES
+(1, 'Nguyen', 'Van An', '1980-05-15', '123 Le Loi St., District 1, HCMC', '0901234567'),
+(2, 'Tran', 'Thi Binh', '1985-08-20', '456 Nguyen Hue St., District 1, HCMC', '0912345678'),
+(3, 'Le', 'Van Cuong', '1975-03-10', '789 Pasteur St., District 3, HCMC', '0923456789'),
+(4, 'Pham', 'Thi Dung', '1990-12-25', '321 Nam Ky Khoi Nghia St., District 3, HCMC', '0934567890');
+
+INSERT INTO Accounts (AccountID, CustomerID, AccountType, Balance, OpenDate, Status) VALUES
+(1, 1, 'Savings', 50000000, '2020-01-15', 'Active'),
+(2, 1, 'Term Deposit', 200000000, '2020-06-20', 'Active'),
+(3, 2, 'Savings', 75000000, '2019-12-10', 'Active'),
+(4, 2, 'Term Deposit', 300000000, '2020-03-05', 'Active'),
+(5, 3, 'Savings', 25000000, '2021-02-28', 'Active'),
+(6, 3, 'Term Deposit', 150000000, '2021-05-15', 'Active'),
+(7, 4, 'Savings', 100000000, '2019-08-12', 'Active'),
+(8, 4, 'Term Deposit', 500000000, '2019-09-30', 'Active'); 
